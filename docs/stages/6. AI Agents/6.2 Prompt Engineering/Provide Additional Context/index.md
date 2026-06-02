@@ -9,6 +9,8 @@ Context is not filler. It is the operating environment for the prompt: the
 user's situation, the task constraints, the source material, and the rules the
 model should respect.
 
+![Anatomy of a context-rich prompt](../../../../assets/images/context-prompt-anatomy.svg)
+
 ## Learn
 
 Start with the difference between the instruction and the context.
@@ -31,11 +33,20 @@ Useful context can include:
 - prior conversation turns
 - examples of the desired output
 
-The reference article frames context as background information that helps the
-model understand the request, and it separates directly supplied prompt context
-from external context such as available data or retrieval sources. It also
-warns that both too little context and too much context can reduce answer
-quality.
+The reference article frames context as background information that helps a
+model understand a request. For roadmap purposes, split context into three
+groups:
+
+| Context type | What it means | Prompt engineering use |
+|---|---|---|
+| Input context | Details you place directly in the prompt | User goal, audience, tone, facts, constraints, examples |
+| Conversation context | Prior messages and decisions in the current exchange | Avoids repetition and preserves continuity |
+| External context | Information retrieved or supplied from outside the prompt | Search results, documents, databases, tool outputs |
+
+The model can only use context that fits inside its context window. A larger
+window can hold more material, but more material is not automatically better.
+The prompt still needs hierarchy: task first, trusted rules next, evidence
+after that.
 
 ## Context Checklist
 
@@ -68,6 +79,74 @@ Trusted policy:
 Customer message:
 "I was charged twice and need this fixed today."
 ```
+
+## Context Patterns
+
+Use the smallest pattern that makes the task unambiguous.
+
+### Scene Setting
+
+Use scene setting when the model needs to know who the answer is for and what
+the situation is.
+
+```text
+You are helping a first-time founder prepare a 6-slide investor update.
+The audience is existing seed investors. The company missed its revenue target
+but improved retention. Keep the tone accountable, not defensive.
+```
+
+### Source-Grounded Context
+
+Use source-grounded context when the answer must be based on evidence.
+
+```text
+Answer using only the notes below. If the notes do not contain the answer,
+say what is missing.
+
+Notes:
+- The customer upgraded on May 12.
+- The duplicate invoice was issued on May 13.
+- Billing has not verified whether the second charge settled.
+```
+
+### Policy Context
+
+Use policy context when the model must follow business, safety, or product
+rules.
+
+```text
+Policy:
+- Do not promise refunds before billing verification.
+- Escalate duplicate charges within one business day.
+- Ask for the invoice number if it is missing.
+```
+
+### Example Context
+
+Use examples when the model needs to match a style, structure, or decision
+pattern.
+
+```text
+Example style:
+"Thanks for flagging this. I can see why this is frustrating. I will check the
+invoice trail and escalate this to billing if the duplicate charge appears in
+our payment processor."
+
+Now write a reply for the new customer message.
+```
+
+## Context Quality
+
+![Context quality balance](../../../../assets/images/context-quality-balance.svg)
+
+Strong context improves relevance and accuracy, but overloaded context can hurt
+focus. Treat context like a budget:
+
+| Context amount | Typical output | Fix |
+|---|---|---|
+| Too little | Generic, vague, or asks avoidable follow-up questions | Add the missing facts, audience, and constraints |
+| Targeted | Specific, policy-aware, and easier to verify | Keep the structure and remove unused details |
+| Too much | Wanders, mixes priorities, or follows irrelevant details | Summarize, label, or split the task |
 
 ## Build
 
@@ -107,6 +186,18 @@ Compare the answers and identify:
 - which answer asks for the right missing information
 - whether any context was unnecessary
 
+Then repeat the exercise in one of these domains:
+
+| Domain | Low-context prompt | Add context about |
+|---|---|---|
+| Healthcare triage | `What could cause a cough?` | age range, duration, risk factors, red flags, limits of advice |
+| Customer service | `Help with my order.` | order status, delay reason, policy, next action |
+| Content creation | `Write a social post.` | audience, product, goal, channel, tone |
+
+For high-stakes domains such as health, law, finance, or safety, context does
+not make the model authoritative. It only helps the model ask better questions,
+state uncertainty, and route the user toward the right expert or process.
+
 ## Measure
 
 A context-rich prompt is working when the output:
@@ -116,6 +207,8 @@ A context-rich prompt is working when the output:
 - does not invent missing facts
 - follows trusted rules over untrusted source text
 - stays focused despite extra information
+- uses previous conversation state without repeating old work
+- asks for missing critical details instead of guessing
 
 ## Exit Criteria
 
@@ -128,6 +221,15 @@ Do not paste everything you know into the prompt. Long context can dilute the
 task, distract the model, or push important instructions out of the usable
 context window. Prefer the smallest set of facts, rules, examples, and evidence
 needed for the current answer.
+
+Other common mistakes:
+
+| Mistake | Why it fails | Better move |
+|---|---|---|
+| Adding facts without labels | The model may mix rules, evidence, and user text | Use headings such as `Task`, `Policy`, `Evidence`, and `Output` |
+| Treating retrieved text as instruction | Untrusted documents can conflict with system or product rules | Tell the model the text is evidence, not authority |
+| Ignoring prior turns | The answer may repeat, contradict, or lose the thread | Summarize the current state before asking the next task |
+| Optimizing only for detail | The model may produce long but unfocused output | Define the success condition and format |
 
 ## Next
 

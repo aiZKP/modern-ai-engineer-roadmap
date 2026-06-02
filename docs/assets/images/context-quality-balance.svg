@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Context quality balance</title>
+  <desc id="desc">A chart comparing too little context, targeted context, and overloaded context across relevance, accuracy, and focus.</desc>
+  <rect width="1200" height="560" fill="#f8faf8"/>
+  <rect x="60" y="52" width="1080" height="448" rx="16" fill="#ffffff" stroke="#0f766e" stroke-opacity="0.24" stroke-width="2"/>
+  <text x="96" y="112" fill="#10201d" font-family="Arial, sans-serif" font-size="34" font-weight="700">Context Quality Balance</text>
+  <text x="96" y="150" fill="#39524d" font-family="Arial, sans-serif" font-size="19">The goal is not maximum context. The goal is enough relevant context to reduce ambiguity.</text>
+
+  <line x1="154" y1="418" x2="1060" y2="418" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="154" y1="218" x2="154" y2="418" stroke="#94a3b8" stroke-width="2"/>
+  <text x="92" y="224" fill="#64748b" font-family="Arial, sans-serif" font-size="16">High</text>
+  <text x="96" y="418" fill="#64748b" font-family="Arial, sans-serif" font-size="16">Low</text>
+
+  <g transform="translate(222 0)">
+    <rect x="0" y="326" width="46" height="92" rx="5" fill="#0f766e"/>
+    <rect x="58" y="338" width="46" height="80" rx="5" fill="#f59e0b"/>
+    <rect x="116" y="306" width="46" height="112" rx="5" fill="#2563eb"/>
+    <text x="8" y="454" fill="#10201d" font-family="Arial, sans-serif" font-size="18" font-weight="700">Too little</text>
+    <text x="-22" y="480" fill="#39524d" font-family="Arial, sans-serif" font-size="15">vague, generic</text>
+  </g>
+
+  <g transform="translate(520 0)">
+    <rect x="0" y="238" width="46" height="180" rx="5" fill="#0f766e"/>
+    <rect x="58" y="228" width="46" height="190" rx="5" fill="#f59e0b"/>
+    <rect x="116" y="246" width="46" height="172" rx="5" fill="#2563eb"/>
+    <text x="-2" y="454" fill="#10201d" font-family="Arial, sans-serif" font-size="18" font-weight="700">Targeted</text>
+    <text x="-30" y="480" fill="#39524d" font-family="Arial, sans-serif" font-size="15">specific, usable</text>
+  </g>
+
+  <g transform="translate(818 0)">
+    <rect x="0" y="280" width="46" height="138" rx="5" fill="#0f766e"/>
+    <rect x="58" y="270" width="46" height="148" rx="5" fill="#f59e0b"/>
+    <rect x="116" y="344" width="46" height="74" rx="5" fill="#2563eb"/>
+    <text x="-8" y="454" fill="#10201d" font-family="Arial, sans-serif" font-size="18" font-weight="700">Overloaded</text>
+    <text x="-14" y="480" fill="#39524d" font-family="Arial, sans-serif" font-size="15">noisy, drifting</text>
+  </g>
+
+  <g transform="translate(760 106)">
+    <rect x="0" y="0" width="20" height="20" rx="4" fill="#0f766e"/>
+    <text x="30" y="17" fill="#39524d" font-family="Arial, sans-serif" font-size="17">Relevance</text>
+    <rect x="142" y="0" width="20" height="20" rx="4" fill="#f59e0b"/>
+    <text x="172" y="17" fill="#39524d" font-family="Arial, sans-serif" font-size="17">Accuracy</text>
+    <rect x="278" y="0" width="20" height="20" rx="4" fill="#2563eb"/>
+    <text x="308" y="17" fill="#39524d" font-family="Arial, sans-serif" font-size="17">Focus</text>
+  </g>
+</svg>
