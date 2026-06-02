@@ -1,26 +1,5 @@
 # Agent Loop
 
-## Purpose
-
-An AI agent is not just a chatbot that produces text. It is a system that can
-receive a goal, inspect information, reason about what to do next, use tools,
-observe the result, and repeat until it should stop.
-
-The agent loop is the control cycle that makes this possible.
-
-## Summary
-
-Most useful agents follow the same pattern:
-
-```text
-Perceive -> Plan -> Act -> Observe -> Reflect -> Stop or Continue
-```
-
-The loop lets the agent adapt when the first attempt is incomplete, wrong, or
-blocked. Without a loop, the system is closer to a single LLM response or a
-fixed workflow. With a loop, the agent can work through multi-step tasks such as
-research, code repair, customer support, data analysis, or deployment planning.
-
 ## What Is an Agent?
 
 An agent is a goal-driven software system that can decide what to do next. In
@@ -46,8 +25,7 @@ working until the goal is complete or it must stop.
 User goal:
 
 ```text
-Create a short report on this week's product signups and explain the biggest
-change from last week.
+Create a short report on this week's product signups and explain the biggest change from last week.
 ```
 
 A useful agent might:
@@ -132,6 +110,25 @@ Possible tool sequence:
 Tools should be limited to what the agent actually needs. Giving an agent too
 many powerful tools without permissions, schemas, and logging makes the loop
 harder to control.
+
+## What is Agent Loop
+
+An AI agent is not just a chatbot that produces text. It is a system that can
+receive a goal, inspect information, reason about what to do next, use tools,
+observe the result, and repeat until it should stop.
+
+The agent loop is the control cycle that makes this possible.
+
+Most useful agents follow the same pattern:
+
+```text
+Perceive -> Plan -> Act -> Observe -> Reflect -> Stop or Continue
+```
+
+The loop lets the agent adapt when the first attempt is incomplete, wrong, or
+blocked. Without a loop, the system is closer to a single LLM response or a
+fixed workflow. With a loop, the agent can work through multi-step tasks such as
+research, code repair, customer support, data analysis, or deployment planning.
 
 ## Agent Loop at a Glance
 
@@ -278,25 +275,6 @@ An agent loop usually sits inside a larger architecture.
 
 The "brain" decides what to do, but the agent becomes useful because it can
 connect reasoning to memory, tools, and observations.
-
-## The Loop as a Diagram
-
-```mermaid
-flowchart TD
-    A[User goal] --> B[Perceive state]
-    B --> C[Plan next step]
-    C --> D{Need a tool?}
-    D -- Yes --> E[Call tool]
-    D -- No --> F[Draft response or decision]
-    E --> G[Read observation]
-    F --> G
-    G --> H[Reflect against goal]
-    H --> I{Done or blocked?}
-    I -- Continue --> B
-    I -- Done --> J[Final answer]
-    I -- Missing info --> K[Ask user or human reviewer]
-    I -- Unsafe or impossible --> L[Refuse or fail safely]
-```
 
 ## Step-by-Step Explanation
 
@@ -589,108 +567,6 @@ Stop conditions:
 - Unsafe request:
 - Tool failure:
 ```
-
-### Filled Example: Research Agent
-
-```text
-Agent name: Citation research assistant
-Primary user: Technical learner
-Goal: Explain AI agents using 3 credible sources.
-
-Inputs the agent can perceive:
-- User message: research question and requested format
-- Files: none
-- Tool observations: search results and opened pages
-- Memory: source notes collected during this task
-
-Allowed tools:
-- web_search: read-only, no approval, returns result list
-- open_page: read-only, no approval, returns page text
-- final_answer: write response to user
-
-Loop limits:
-- Max iterations: 8
-- Timeout: 5 minutes
-- Cost or token budget: 3 source pages maximum
-- Retry limit per tool: 1 retry after a failed search
-
-Reflection checks:
-- Use at least one authoritative source.
-- Explain autonomy, tools, observation, and iteration.
-- Do not cite a source that was not opened.
-- Ask the user if they require a specific domain or date range.
-
-Stop conditions:
-- Success: 3 sources summarized with citations and a comparison table
-- Missing information: user asks for a private source the agent cannot access
-- Unsafe request: user asks the agent to impersonate a real person
-- Tool failure: search fails twice
-```
-
-## Minimal Pseudocode
-
-```python
-state = perceive(user_goal, context)
-
-for step in range(max_steps):
-    plan = choose_next_step(state)
-
-    if plan.needs_user_input:
-        return ask_user(plan.questions)
-
-    if plan.is_unsafe:
-        return refuse_or_escalate(plan.reason)
-
-    if plan.is_done:
-        return final_answer(state)
-
-    action = build_action(plan)
-    observation = run_tool_or_generate(action)
-    state = update_state(state, observation)
-
-return fail_safely("Reached max steps without satisfying the goal.")
-```
-
-The important part is not the exact code. The important part is that every
-iteration has state, a next action, an observation, and a reason to continue or
-stop.
-
-## Build
-
-Draw two loops and write one implementation contract:
-
-1. A research assistant that answers a question with citations.
-2. A code assistant that fixes a failing test.
-3. A tool contract for one tool used in either loop.
-
-For each loop, label:
-
-- Goal
-- Perception inputs
-- Planning step
-- Tool actions
-- Observations
-- Reflection checks
-- Stop condition
-- Safety or cost guardrail
-
-For the tool contract, include:
-
-- Tool name
-- Inputs
-- Outputs
-- Permissions
-- Retry rule
-- Failure behavior
-
-## Exit Criteria
-
-You can explain why an agent loop needs perception, planning, action,
-observation, reflection, memory, tools, max steps, timeouts, cost budgets, and
-stop rules. You can also write a specific agent contract with state fields, tool
-schemas, stop conditions, and failure behavior. Finally, you can tell the
-difference between a one-shot LLM response, a fixed workflow, and an adaptive
-agent.
 
 ## Source Notes
 
