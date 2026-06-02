@@ -1,6 +1,6 @@
 # Specify Length, Format, and Audience
 
-## Purpose
+## Summary
 
 Length, format, and audience constraints turn a vague request into an output
 contract. They tell the model how much to write, what shape the answer must
@@ -40,24 +40,6 @@ Put these rules near the start or in a clearly labeled `Output requirements`
 section. If the task is long, repeat the required output format immediately
 before the model should answer.
 
-## Why This Works
-
-Models are good at matching patterns. A clear output contract gives the model a
-pattern to follow and reduces ambiguity.
-
-```mermaid
-flowchart LR
-    A[Vague task] --> B[Model guesses length]
-    A --> C[Model guesses structure]
-    A --> D[Model guesses reader]
-    B --> E[Inconsistent output]
-    C --> E
-    D --> E
-
-    F[Task + length + format + audience] --> G[Clear output contract]
-    G --> H[Readable, focused, reusable answer]
-```
-
 ## Specify Length
 
 Length controls depth. A short answer is useful when the reader needs a quick
@@ -85,39 +67,6 @@ Length does not need to be exact for every task. For human reading, approximate
 limits are usually enough. For UI copy, social posts, database fields, or
 automation, use stricter limits.
 
-### Prompt Length Categories
-
-Prompt length is different from output length. Prompt length means how much
-instruction you give the model. Output length means how much the model should
-write back. Both matter.
-
-| Prompt length | Best for | Use when | Example prompt |
-| --- | --- | --- | --- |
-| Short prompt, `1-10 words` | Quick answers | The task is simple and the expected answer is obvious | `Define prompt engineering.` |
-| Medium prompt, `11-50 words` | Guided explanations | The task needs context, comparison, or a specific structure | `Compare short and long prompts in prompt engineering. Give examples of when each is useful.` |
-| Long prompt, `51+ words` | Complex tasks | The task needs role, audience, constraints, examples, format, and success criteria | `You are a prompt engineering tutor. Write a beginner-friendly 1000-word guide covering key concepts, best practices, common mistakes, examples, and one short case study.` |
-
-Short prompts are efficient, but they leave more room for guessing. Use them for
-definitions, quick facts, simple transformations, and yes/no questions.
-
-Medium prompts are the default for most learning and work tasks. They give the
-model enough context to choose the right depth, structure, and examples without
-becoming overloaded.
-
-Long prompts are useful when the answer must satisfy many requirements. Use them
-for in-depth analysis, creative writing, multi-step problem solving, code tasks,
-agent workflows, and content that needs a precise audience or format.
-
-| Prompt type | Good example | Why it works |
-| --- | --- | --- |
-| Short | `Define embeddings.` | The task is narrow and needs no extra context |
-| Medium | `Explain embeddings to a beginner in 5 bullets with one analogy.` | Adds audience, length, format, and style |
-| Long | `You are teaching junior developers. Explain embeddings in 500 words with sections for definition, intuition, example, common mistake, and when to use them in RAG.` | Gives role, audience, length, structure, topic scope, and use case |
-
-Do not make a prompt long just to sound detailed. Add length only when it gives
-the model useful constraints: audience, source material, examples, allowed
-actions, forbidden actions, output format, or evaluation criteria.
-
 ### Specific Length Rules
 
 Choose the length rule based on where the output will go.
@@ -139,6 +88,8 @@ such as `180-220 words` or structural limits such as `5 bullets`.
 Format controls how the answer is organized. Use it when the output must be
 easy to skim, compare, validate, or pass into another tool.
 
+The format of your prompt can make or break its effectiveness. It’s not just about what you ask, but how you ask it.
+
 | Format | Use when | Example instruction |
 | --- | --- | --- |
 | Bullets | The reader needs quick takeaways | `Use 6 bullets, ordered by importance.` |
@@ -148,6 +99,21 @@ easy to skim, compare, validate, or pass into another tool.
 | JSON | Software must parse the result | `Return only valid JSON matching this schema.` |
 | Email | The output must be sent to a person | `Write as a professional email with subject line.` |
 | Checklist | The user must verify completion | `Return a checklist with pass/fail criteria.` |
+
+### Types of Prompt Formats
+
+- Question based prompts: These are straightforward and often begin with who, what, when, where, why, or how.
+  Example: “What are the main challenges facing renewable energy adoption in 2026?”
+
+- Instruction based prompts: These tell the AI exactly what you want it to do.
+  Example: “Write a 500 word blog post about the benefits of meditation for stress relief.”
+
+- Context based prompts: These provide background information before asking a question or giving an instruction.
+  Example: “You are an expert in blockchain technology. Explain the concept of smart contracts to a beginner.”
+- Role playing prompts: These ask the AI to assume a specific role or persona.
+  Example: “As a financial advisor, provide advice on diversifying an investment portfolio in a volatile market.”
+- Completion prompts: These provide the beginning of a sentence or paragraph for the AI to complete.
+  Example: “The future of transportation in smart cities will be characterized by…”
 
 ### Format Recipes
 
@@ -162,85 +128,13 @@ Use a recipe when you need repeatable output.
 | Extract data | `Return only JSON. No markdown, no comments, no trailing text.` |
 | Review output | `Use sections: Findings, Risks, Missing information, Suggested fix.` |
 
-### Human-Readable Format
-
-Use markdown when the output is for people.
-
-```text
-Explain prompt injection to junior developers.
-Format:
-- One-sentence definition
-- Three common attack examples
-- One markdown table with columns: Attack, Why it works, Mitigation
-- End with a 3-item checklist
-Length: under 350 words
-Audience: junior backend developers
-```
-
-### Parser-Safe Format
-
-Use JSON when another program needs the answer. Be strict about keys, types, and
-extra text.
-
-```text
-Extract the task requirements from the user message.
-
-Return only valid JSON. Do not include markdown.
-
-Schema:
-{
-  "task": "string",
-  "audience": "string",
-  "deliverables": ["string"],
-  "constraints": ["string"],
-  "missing_information": ["string"]
-}
-```
-
-For production workflows, validate the JSON before trusting it. If validation
-fails, retry with the error message or route the output to a human.
-
-### Specific JSON Contract
-
-For software parsing, specify required keys, allowed values, and what to do when
-information is missing.
-
-```text
-Extract a support ticket from the user message.
-
-Output requirements:
-- Return only valid JSON.
-- Use exactly these keys: title, priority, category, summary, missing_fields.
-- priority must be one of: low, medium, high, urgent.
-- category must be one of: billing, bug, account, feature_request, other.
-- If a value is unknown, use null and add the field name to missing_fields.
-- Do not invent customer IDs, dates, or product names.
-
-JSON shape:
-{
-  "title": "string",
-  "priority": "low | medium | high | urgent",
-  "category": "billing | bug | account | feature_request | other",
-  "summary": "string under 80 words",
-  "missing_fields": ["string"]
-}
-```
-
-Specific parser checks:
-
-| Check | Pass condition |
-| --- | --- |
-| Valid JSON | A JSON parser accepts the output |
-| No extra prose | The first non-space character is `{` and the last is `}` |
-| Required keys | All required keys exist exactly once |
-| Allowed values | Enum fields use only allowed values |
-| Missing data | Unknown facts are `null`, not invented |
-
 ## Specify Audience
 
 Audience controls vocabulary, assumptions, examples, and level of detail. The
 same topic should look different for a child, a new developer, a CTO, and a
 domain expert.
+
+Understanding your audience – both the AI model you’re prompting and the end users of the generated content – is crucial for effective prompt engineering
 
 | Audience | What changes | Example direction |
 | --- | --- | --- |
@@ -279,121 +173,37 @@ Audience:
 This tells the model which terms need definitions and which terms can be used
 without explanation.
 
-## Prompt Blueprint
+## Examples
 
-Think of the final prompt as a small specification.
+### Example 1:Technical Writing for Developers
 
-```text
-[Task]
-What should the model do?
+Prompt: “As an experienced software engineer, write a detailed tutorial on implementing a RESTful API using Node.js and Express. The tutorial should be 1500 words long and include code snippets, best practices, and common pitfalls to avoid. Your audience is junior developers with basic JavaScript knowledge.”
 
-[Length]
-How much should it write?
+Analysis:
 
-[Format]
-What structure, sections, fields, or ordering should it use?
+Format: Instruction with role playing element
+Length: Long (provides specific word count and content requirements)
+Audience: Clearly defined (junior developers with basic JavaScript knowledge)
 
-[Audience]
-Who is the answer for, and what can they already understand?
+### Example 2: Creative Writing for Children
 
-[Quality bar]
-What should the answer include, avoid, cite, refuse, or verify?
-```
+Prompt: “Write a short, imaginative story about a friendly robot who learns the value of friendship. The story should be suitable for children aged 6-8 and no longer than 300 words. Include a moral lesson at the end.”
 
-### Illustration: From Vague to Useful
+Analysis:
 
-```text
-Vague:
-Explain cybersecurity.
+Format: Instruction based with specific creative elements
+Length: Medium (word limit specified)
+Audience: Clearly defined (children aged 6-8)
 
-Better:
-Explain cybersecurity to small business owners in about 250 words.
-Use markdown with these sections:
-1. What it means
-2. Common threats
-3. Business impact
-4. Three practical prevention steps
-Avoid technical jargon unless you define it.
-```
+### Example 3: Market Analysis for Executives
 
-The better version gives the model a target reader, a length budget, a required
-structure, and a style constraint.
+Prompt: “You are a leading market analyst. Provide a concise summary of the major trends shaping the electric vehicle industry in 2026. Focus on technological advancements, market growth, and regulatory changes. Your analysis should be no more than 500 words and suitable for busy executives.”
 
-## Specific Before and After Examples
+Analysis:
 
-### Example 1: Human-Readable Explanation
-
-Weak:
-
-```text
-Explain AI agents.
-```
-
-Specific:
-
-```text
-Explain AI agents to a junior Python developer.
-
-Output requirements:
-- Length: 180-220 words.
-- Format: markdown with sections: Definition, How the loop works, Example,
-  Common mistake.
-- Audience: knows APIs and functions, but is new to LLM agents.
-- Style: practical, no hype, define "tool" and "observation".
-```
-
-### Example 2: Comparison Table
-
-Weak:
-
-```text
-Compare RAG and fine-tuning.
-```
-
-Specific:
-
-```text
-Compare RAG and fine-tuning for a startup CTO deciding what to build first.
-
-Output requirements:
-- Use a markdown table only.
-- Columns, in this order: Approach, Best when, Data needed, Cost risk,
-  Operational risk, Recommendation.
-- Keep each cell under 25 words.
-- End with one final row named "Default choice".
-```
-
-### Example 3: Parser-Safe Extraction
-
-Weak:
-
-```text
-Get the action items from this meeting note.
-```
-
-Specific:
-
-```text
-Extract action items from the meeting note.
-
-Return only valid JSON:
-{
-  "action_items": [
-    {
-      "task": "string",
-      "owner": "string or null",
-      "due_date": "YYYY-MM-DD or null",
-      "priority": "low | medium | high"
-    }
-  ],
-  "missing_fields": ["string"]
-}
-
-Rules:
-- Do not infer a due date unless it is explicitly stated.
-- If owner is unclear, use null.
-- Preserve the original task meaning in under 20 words.
-```
+Format: Role playing with specific instructions
+Length: Medium to Long (word limit specified)
+Audience: Clearly defined (busy executives)
 
 ## Combined Example
 
@@ -461,55 +271,6 @@ easier to audit.
 | Choosing a format after the task is complex | Important constraints may be ignored | Put output rules near the start |
 | Ignoring audience | Tone and depth may miss the reader | State role, knowledge level, and goal |
 | Overloading the prompt | The model may drop requirements | Split complex work into steps or schemas |
-
-## Validation Checklist
-
-Use this checklist before accepting the model response:
-
-| Requirement | Check |
-| --- | --- |
-| Length | Does the answer meet the word, bullet, row, or field limit? |
-| Format | Are sections, columns, keys, or list types exactly as requested? |
-| Audience | Is the vocabulary appropriate for the specified reader? |
-| Completeness | Does every required section or field contain useful content? |
-| No invention | Are missing facts marked as missing instead of guessed? |
-| Parser safety | Can structured output be parsed without manual cleanup? |
-| Style | Does the answer follow tone and exclusion rules? |
-
-## Practice
-
-Rewrite each weak prompt so it includes length, format, and audience.
-
-| Weak prompt | Add constraints |
-| --- | --- |
-| `Explain cloud computing.` | Length, format, and audience |
-| `Compare Python and Java.` | Table columns and reader level |
-| `Write about AI safety.` | Word count, sections, and citation rules |
-| `Summarize this article.` | Bullet count, target reader, and action items |
-
-## Build
-
-Create three prompts for the same task:
-
-1. A free-form prompt for a human reader.
-2. A schema-constrained prompt for software parsing.
-3. A short UI or executive-summary prompt with strict length limits.
-
-Then compare:
-
-- Which output is easier to skim?
-- Which output is easier to validate?
-- What information was lost or improved by adding a strict format?
-- Did the audience instruction change vocabulary and examples?
-- Which constraints can be checked automatically?
-
-## Exit Criteria
-
-You can design an output contract that specifies length, format, audience, and
-validation rules. You can write testable instructions with exact sections,
-columns, keys, allowed values, length limits, missing-data behavior, and audience
-assumptions. You can also reject or repair malformed output before it reaches
-users or downstream tools.
 
 ## Source Notes
 
