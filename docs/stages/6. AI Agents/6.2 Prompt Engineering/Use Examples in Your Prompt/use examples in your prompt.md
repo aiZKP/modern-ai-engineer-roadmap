@@ -51,6 +51,7 @@ Classify sentiment:
 I love this movie.
 
 Output:
+
 Positive
 
 The model relies only on its training.
@@ -92,61 +93,3 @@ Output:
 Negative
 
 This is often the most effective approach.
-============Example for Coding=====================
-    Write a Python function that adds two numbers.
-
-    Example:
-
-Input:
-Multiply two numbers
-
-Output:
-def multiply(a: int, b: int) -> int:
-    return a * b
-
-Now:
-
-Input:
-Add two numbers
-
-Output:
-
-The model is likely to follow:
-
-def add(a: int, b: int) -> int:
-    return a + b
-
-Notice it copied:
-
-type hints
-formatting
-naming conventions
-
-===============Example for Data Extraction================
-Example:
-
-Text:
-User Ryan logged in at 10:30 AM
-
-JSON:
-{
-  "user": "Ryan",
-  "action": "logged in",
-  "time": "10:30 AM"
-}
-
-Text:
-User Alice logged out at 2:15 PM
-
-JSON:
-
-Output:
-
-{
-  "user": "Alice",
-  "action": "logged out",
-  "time": "2:15 PM"
-}
-
-The example teaches the desired structure.
-
