@@ -9,7 +9,7 @@ Context is not filler. It is the operating environment for the prompt: the
 user's situation, the task constraints, the source material, and the rules the
 model should respect.
 
-![Anatomy of a context-rich prompt](../../../../assets/images/context-prompt-anatomy.svg)
+![Components of context in prompt engineering](../../../../assets/images/context-components.png)
 
 ## Learn
 
@@ -36,6 +36,8 @@ Useful context can include:
 The reference article frames context as background information that helps a
 model understand a request. For roadmap purposes, split context into three
 groups:
+
+![Comparison of input context and external context](../../../../assets/images/context-types-comparison.png)
 
 | Context type | What it means | Prompt engineering use |
 |---|---|---|
@@ -126,6 +128,8 @@ Policy:
 Use examples when the model needs to match a style, structure, or decision
 pattern.
 
+![Using examples in prompts for better AI understanding](../../../../assets/images/context-examples-radar.png)
+
 ```text
 Example style:
 "Thanks for flagging this. I can see why this is frustrating. I will check the
@@ -137,7 +141,7 @@ Now write a reply for the new customer message.
 
 ## Context Quality
 
-![Context quality balance](../../../../assets/images/context-quality-balance.svg)
+![The importance of context in AI responses](../../../../assets/images/context-impact-comparison.png)
 
 Strong context improves relevance and accuracy, but overloaded context can hurt
 focus. Treat context like a budget:
