@@ -1446,6 +1446,12 @@
 
   function shouldEnhancePage() {
     const path = decodeURIComponent(window.location.pathname);
+    if (path.indexOf("/stages/6. AI Agents/6.1 LLM Fundamentals/Temperature, Top-p, Top-k") !== -1) {
+      return false;
+    }
+    if (path.indexOf("/stages/6. AI Agents/6.2 Prompt Engineering/Use Relevant Technical Terms") !== -1) {
+      return false;
+    }
     return path.indexOf("/stages/6. AI Agents") !== -1;
   }
 
