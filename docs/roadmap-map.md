@@ -4,57 +4,45 @@
 
 ```mermaid
 flowchart TD
-  S0["0. Orientation<br/>AI engineering map, tools, learning log"]
-  S1["1. Foundations<br/>Python, CS, math, data"]
-  S2["2. Machine Learning<br/>supervised ML, evaluation, leakage"]
-  S3["3. Deep Learning<br/>PyTorch, neural nets, training loops"]
-  S4["4. LLMs<br/>tokens, transformers, generation, fine-tuning"]
-  S5["5. AI Applications<br/>prompting, RAG, evals, UX, feedback"]
-  S6["6. AI Agents<br/>tools, memory, planning, MCP, safety"]
-  S7["7. Model Infrastructure<br/>data, MLOps, serving, observability"]
-  S8["8. Optimization and Hardware<br/>quantization, serving engines, GPU, edge"]
-  S9["9. Security, Blockchain, ZKML<br/>LLM security, smart contracts, proofs"]
-  S10["10. Mastery<br/>specialization and capstone"]
+  S0["0. Orientation<br/>Build the map before choosing tools."]
+  S1["1. Foundations<br/>Become fluent with code, data, math, and systems basics."]
+  S2["2. Machine Learning<br/>Learn how models learn from data and how evaluation can lie."]
+  S3["3. Deep Learning<br/>Train, debug, and reason about neural networks."]
+  S4["4. LLMs<br/>Understand tokens, transformers, generation, adaptation, and evaluation."]
+  S5["5. AI Applications<br/>Build reliable AI products around models."]
+  S6["6. AI Agents<br/>Build controlled tool-using systems, not vague autonomy."]
+  S7["7. Model Infrastructure<br/>Operate AI systems as production software."]
+  S8["8. Optimization and Hardware<br/>Make inference faster, cheaper, and more predictable."]
+  S9["9. Security, Blockchain, ZKML<br/>Secure, govern, and verify AI-enabled systems."]
+  S10["10. Mastery<br/>Own a complete AI system end to end."]
 
-  S0 --> S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9 --> S10
+  S0 --> S1
+  S1 --> S2
+  S2 --> S3
+  S3 --> S4
+  S4 --> S5
+  S5 --> S6
+  S6 --> S7
+  S7 --> S8
+  S8 --> S9
+  S9 --> S10
   S5 --> S7
   S6 --> S9
   S8 --> S10
 ```
 
-## Track Shortcuts
+## Stage Structure
 
-| Goal | Path |
-|---|---|
-| AI application engineer | 0 -> 1 -> 2 -> 4 -> 5 -> 6 -> 7 |
-| LLM engineer | 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 7 -> 8 |
-| Agent engineer | 0 -> 1 -> 4 -> 5 -> 6 -> 7 -> 9 |
-| ML systems engineer | 0 -> 1 -> 2 -> 3 -> 7 -> 8 -> 10 |
-| Inference engineer | 0 -> 1 -> 3 -> 4 -> 7 -> 8 -> 10 |
-| AI security and ZKML engineer | 0 -> 1 -> 4 -> 5 -> 6 -> 9 -> 10 |
-
-## Topic Placement
-
-| Topic | Where it belongs | Why |
-|---|---|---|
-| Basic AI concepts | Stage 0 to 2 | You need vocabulary before architecture |
-| Deep learning | Stage 3 | Neural nets before transformers |
-| LLMs | Stage 4 | Tokens, attention, generation, model limits |
-| RAG | Stage 5 | It is an application pattern, not a beginner topic |
-| Agents | Stage 6 | Agents need LLMs, tools, state, evals, and security |
-| Model infra | Stage 7 | Production work needs monitoring and deployment |
-| Optimization | Stage 8 | Optimize after you can measure |
-| Hardware acceleration | Stage 8 | Hardware makes sense after workload math |
-| Blockchain and ZKML | Stage 9 | Verification needs AI, security, and crypto basics |
-
-## The Important Dependency
-
-AI agents are not magic. They are AI applications with a loop.
-
-```text
-input -> model -> plan/reason -> tool call -> observation -> memory -> response
-```
-
-That loop only becomes useful after you understand prompts, structured outputs,
-RAG, evals, tool boundaries, latency, and security. This is why agents come
-after AI applications, not before them.
+| Stage | Part count | Parts |
+|---|---:|---|
+| [Stage 0: Orientation](<stages/0. Orientation/index.md>) | 5 | AI Engineering Mental Model, Tooling and Learning Environment, Use Case Judgment, Learning Operating System, First Portfolio Skeleton |
+| [Stage 1: Foundations](<stages/1. Foundations/index.md>) | 6 | Python Software Craft, Math for AI Engineers, Data Handling, Databases and Storage, Web and API Basics, Systems Thinking Basics |
+| [Stage 2: Machine Learning](<stages/2. Machine Learning/index.md>) | 5 | Problem Framing, Splits and Leakage, Supervised Models, Metrics and Error Analysis, Unsupervised Representations |
+| [Stage 3: Deep Learning](<stages/3. Deep Learning/index.md>) | 6 | Neural Network Core, Training Loop Engineering, Optimization Dynamics, Architectures and Modalities, Debugging Neural Systems, Hardware Aware Training Preview |
+| [Stage 4: Large Language Models](<stages/4. LLMs/index.md>) | 7 | Token and Context Mechanics, Transformer Mental Model, Generation Controls, Model Landscape, Prompting and In-Context Learning, Fine-Tuning and Dataset Engineering, LLM Evaluation Methodology |
+| [Stage 5: AI Applications](<stages/5. AI Applications/index.md>) | 7 | AI Product Interface, Prompt System Engineering, RAG Ingestion, Retrieval and Reranking, Grounded Generation, Application Evaluation and Feedback, Guardrails and Release Architecture |
+| [Stage 6: AI Agents](<stages/6. AI Agents/index.md>) | 8 | Agent Loop Fundamentals, Reasoning and Planning Patterns, Tool Design, MCP and Tool Ecosystems, Memory and Agentic RAG, Multi-Agent Systems, Agent Evaluation and Observability, Agent Security and Safety |
+| [Stage 7: Model Infrastructure](<stages/7. Model Infrastructure/index.md>) | 6 | Data Pipeline Architecture, RAG and Feature Infrastructure, Training and Adaptation Pipelines, Serving and Deployment, Observability and Quality Operations, Reliability and Cost Control |
+| [Stage 8: Optimization and Hardware Acceleration](<stages/8. Optimization and Hardware/index.md>) | 7 | Inference Performance Model, Transformer Inference Internals, Model Optimization, Serving Engines, Distributed Inference, GPU and Kernel Basics, Edge and Accelerator Co-Design |
+| [Stage 9: AI Security, Blockchain, and ZKML](<stages/9. Security, Blockchain, ZKML/index.md>) | 6 | LLM and Agent Security, Secure AI Application Architecture, Governance and Responsible AI, Blockchain Fundamentals, Smart Contract Security, ZK and Verifiable AI |
+| [Stage 10: Mastery](<stages/10. Mastery/index.md>) | 5 | Capstone Problem and Architecture, Capstone Build Execution, Portfolio Communication, Interview and Collaboration Readiness, Specialization and Research Frontiers |

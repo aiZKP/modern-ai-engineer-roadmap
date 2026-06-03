@@ -1,6 +1,6 @@
 site_name: Modern AI Engineer Roadmap
 site_url: https://aiZKP.github.io/modern-ai-engineer-roadmap/
-site_description: A beginner-to-master roadmap for modern AI engineering, covering AI fundamentals, LLMs, agents, model infrastructure, optimization, hardware acceleration, AI security, blockchain, and ZKML.
+site_description: A beginner-to-master roadmap for modern AI engineering.
 site_author: aiZKP
 repo_url: https://github.com/aiZKP/modern-ai-engineer-roadmap
 repo_name: aiZKP/modern-ai-engineer-roadmap
@@ -36,7 +36,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-    - content.tabs.link
     - toc.follow
   icon:
     repo: fontawesome/brands/github
@@ -59,8 +58,6 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.tabbed:
-      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - toc:
@@ -73,81 +70,1203 @@ plugins:
 extra_css:
   - assets/css/custom.css
 
-extra_javascript:
-  - assets/js/agent-modals.js
-
 nav:
   - Home:
     - Overview: index.md
     - How to Use: how-to-use.md
     - Roadmap Map: roadmap-map.md
   - Stages:
-    - "0. Orientation": "stages/0. Orientation/index.md"
-    - "1. Foundations": "stages/1. Foundations/index.md"
-    - "2. Machine Learning": "stages/2. Machine Learning/index.md"
-    - "3. Deep Learning": "stages/3. Deep Learning/index.md"
-    - "4. LLMs": "stages/4. LLMs/index.md"
-    - "5. AI Applications": "stages/5. AI Applications/index.md"
+    - "0. Orientation":
+      - Overview: "stages/0. Orientation/index.md"
+      - "0.1 AI Engineering Mental Model":
+        - Overview: "stages/0. Orientation/0.1 AI Engineering Mental Model/index.md"
+        - "0.1.1 AI Engineering vs ML Engineering":
+          - Overview: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.1 AI Engineering vs ML Engineering/index.md"
+          - Deep Dive: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.1 AI Engineering vs ML Engineering/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.1 AI Engineering vs ML Engineering/examples-and-practice.md"
+        - "0.1.2 Foundation Model Product Stack":
+          - Overview: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.2 Foundation Model Product Stack/index.md"
+          - Deep Dive: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.2 Foundation Model Product Stack/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.2 Foundation Model Product Stack/examples-and-practice.md"
+        - "0.1.3 Models as Probabilistic Components":
+          - Overview: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.3 Models as Probabilistic Components/index.md"
+          - Deep Dive: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.3 Models as Probabilistic Components/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.3 Models as Probabilistic Components/examples-and-practice.md"
+        - "0.1.4 Adaptation Patterns":
+          - Overview: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.4 Adaptation Patterns/index.md"
+          - Deep Dive: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.4 Adaptation Patterns/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.1 AI Engineering Mental Model/0.1.4 Adaptation Patterns/examples-and-practice.md"
+      - "0.2 Tooling and Learning Environment":
+        - Overview: "stages/0. Orientation/0.2 Tooling and Learning Environment/index.md"
+        - "0.2.1 Developer Environment":
+          - Overview: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.1 Developer Environment/index.md"
+          - Deep Dive: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.1 Developer Environment/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.1 Developer Environment/examples-and-practice.md"
+        - "0.2.2 Python and Notebook Setup":
+          - Overview: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.2 Python and Notebook Setup/index.md"
+          - Deep Dive: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.2 Python and Notebook Setup/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.2 Python and Notebook Setup/examples-and-practice.md"
+        - "0.2.3 Git Terminal and Shell Workflow":
+          - Overview: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.3 Git Terminal and Shell Workflow/index.md"
+          - Deep Dive: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.3 Git Terminal and Shell Workflow/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.3 Git Terminal and Shell Workflow/examples-and-practice.md"
+        - "0.2.4 Secrets and Configuration":
+          - Overview: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.4 Secrets and Configuration/index.md"
+          - Deep Dive: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.4 Secrets and Configuration/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.2 Tooling and Learning Environment/0.2.4 Secrets and Configuration/examples-and-practice.md"
+      - "0.3 Use Case Judgment":
+        - Overview: "stages/0. Orientation/0.3 Use Case Judgment/index.md"
+        - "0.3.1 Use Case Selection":
+          - Overview: "stages/0. Orientation/0.3 Use Case Judgment/0.3.1 Use Case Selection/index.md"
+          - Deep Dive: "stages/0. Orientation/0.3 Use Case Judgment/0.3.1 Use Case Selection/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.3 Use Case Judgment/0.3.1 Use Case Selection/examples-and-practice.md"
+        - "0.3.2 Feasibility and Risk":
+          - Overview: "stages/0. Orientation/0.3 Use Case Judgment/0.3.2 Feasibility and Risk/index.md"
+          - Deep Dive: "stages/0. Orientation/0.3 Use Case Judgment/0.3.2 Feasibility and Risk/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.3 Use Case Judgment/0.3.2 Feasibility and Risk/examples-and-practice.md"
+        - "0.3.3 Product Metrics and User Value":
+          - Overview: "stages/0. Orientation/0.3 Use Case Judgment/0.3.3 Product Metrics and User Value/index.md"
+          - Deep Dive: "stages/0. Orientation/0.3 Use Case Judgment/0.3.3 Product Metrics and User Value/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.3 Use Case Judgment/0.3.3 Product Metrics and User Value/examples-and-practice.md"
+      - "0.4 Learning Operating System":
+        - Overview: "stages/0. Orientation/0.4 Learning Operating System/index.md"
+        - "0.4.1 Stage Project Loop":
+          - Overview: "stages/0. Orientation/0.4 Learning Operating System/0.4.1 Stage Project Loop/index.md"
+          - Deep Dive: "stages/0. Orientation/0.4 Learning Operating System/0.4.1 Stage Project Loop/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.4 Learning Operating System/0.4.1 Stage Project Loop/examples-and-practice.md"
+        - "0.4.2 Evaluation First Habit":
+          - Overview: "stages/0. Orientation/0.4 Learning Operating System/0.4.2 Evaluation First Habit/index.md"
+          - Deep Dive: "stages/0. Orientation/0.4 Learning Operating System/0.4.2 Evaluation First Habit/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.4 Learning Operating System/0.4.2 Evaluation First Habit/examples-and-practice.md"
+        - "0.4.3 Decision Journal and Failure Log":
+          - Overview: "stages/0. Orientation/0.4 Learning Operating System/0.4.3 Decision Journal and Failure Log/index.md"
+          - Deep Dive: "stages/0. Orientation/0.4 Learning Operating System/0.4.3 Decision Journal and Failure Log/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.4 Learning Operating System/0.4.3 Decision Journal and Failure Log/examples-and-practice.md"
+        - "0.4.4 Roadmap Navigation":
+          - Overview: "stages/0. Orientation/0.4 Learning Operating System/0.4.4 Roadmap Navigation/index.md"
+          - Deep Dive: "stages/0. Orientation/0.4 Learning Operating System/0.4.4 Roadmap Navigation/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.4 Learning Operating System/0.4.4 Roadmap Navigation/examples-and-practice.md"
+      - "0.5 First Portfolio Skeleton":
+        - Overview: "stages/0. Orientation/0.5 First Portfolio Skeleton/index.md"
+        - "0.5.1 Portfolio Repository Layout":
+          - Overview: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.1 Portfolio Repository Layout/index.md"
+          - Deep Dive: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.1 Portfolio Repository Layout/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.1 Portfolio Repository Layout/examples-and-practice.md"
+        - "0.5.2 README Quality Bar":
+          - Overview: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.2 README Quality Bar/index.md"
+          - Deep Dive: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.2 README Quality Bar/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.2 README Quality Bar/examples-and-practice.md"
+        - "0.5.3 Evidence Over Certificates":
+          - Overview: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.3 Evidence Over Certificates/index.md"
+          - Deep Dive: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.3 Evidence Over Certificates/deep-dive.md"
+          - Examples and Practice: "stages/0. Orientation/0.5 First Portfolio Skeleton/0.5.3 Evidence Over Certificates/examples-and-practice.md"
+    - "1. Foundations":
+      - Overview: "stages/1. Foundations/index.md"
+      - "1.1 Python Software Craft":
+        - Overview: "stages/1. Foundations/1.1 Python Software Craft/index.md"
+        - "1.1.1 Python Project Structure":
+          - Overview: "stages/1. Foundations/1.1 Python Software Craft/1.1.1 Python Project Structure/index.md"
+          - Deep Dive: "stages/1. Foundations/1.1 Python Software Craft/1.1.1 Python Project Structure/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.1 Python Software Craft/1.1.1 Python Project Structure/examples-and-practice.md"
+        - "1.1.2 Functions Classes and Modules":
+          - Overview: "stages/1. Foundations/1.1 Python Software Craft/1.1.2 Functions Classes and Modules/index.md"
+          - Deep Dive: "stages/1. Foundations/1.1 Python Software Craft/1.1.2 Functions Classes and Modules/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.1 Python Software Craft/1.1.2 Functions Classes and Modules/examples-and-practice.md"
+        - "1.1.3 Testing with Pytest":
+          - Overview: "stages/1. Foundations/1.1 Python Software Craft/1.1.3 Testing with Pytest/index.md"
+          - Deep Dive: "stages/1. Foundations/1.1 Python Software Craft/1.1.3 Testing with Pytest/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.1 Python Software Craft/1.1.3 Testing with Pytest/examples-and-practice.md"
+        - "1.1.4 Logging and Error Handling":
+          - Overview: "stages/1. Foundations/1.1 Python Software Craft/1.1.4 Logging and Error Handling/index.md"
+          - Deep Dive: "stages/1. Foundations/1.1 Python Software Craft/1.1.4 Logging and Error Handling/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.1 Python Software Craft/1.1.4 Logging and Error Handling/examples-and-practice.md"
+        - "1.1.5 Configuration and Reproducibility":
+          - Overview: "stages/1. Foundations/1.1 Python Software Craft/1.1.5 Configuration and Reproducibility/index.md"
+          - Deep Dive: "stages/1. Foundations/1.1 Python Software Craft/1.1.5 Configuration and Reproducibility/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.1 Python Software Craft/1.1.5 Configuration and Reproducibility/examples-and-practice.md"
+      - "1.2 Math for AI Engineers":
+        - Overview: "stages/1. Foundations/1.2 Math for AI Engineers/index.md"
+        - "1.2.1 Linear Algebra for Representations":
+          - Overview: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.1 Linear Algebra for Representations/index.md"
+          - Deep Dive: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.1 Linear Algebra for Representations/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.1 Linear Algebra for Representations/examples-and-practice.md"
+        - "1.2.2 Probability and Random Variables":
+          - Overview: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.2 Probability and Random Variables/index.md"
+          - Deep Dive: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.2 Probability and Random Variables/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.2 Probability and Random Variables/examples-and-practice.md"
+        - "1.2.3 Statistics and Sampling":
+          - Overview: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.3 Statistics and Sampling/index.md"
+          - Deep Dive: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.3 Statistics and Sampling/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.3 Statistics and Sampling/examples-and-practice.md"
+        - "1.2.4 Calculus and Gradient Intuition":
+          - Overview: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.4 Calculus and Gradient Intuition/index.md"
+          - Deep Dive: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.4 Calculus and Gradient Intuition/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.2 Math for AI Engineers/1.2.4 Calculus and Gradient Intuition/examples-and-practice.md"
+      - "1.3 Data Handling":
+        - Overview: "stages/1. Foundations/1.3 Data Handling/index.md"
+        - "1.3.1 CSV JSON and Parquet":
+          - Overview: "stages/1. Foundations/1.3 Data Handling/1.3.1 CSV JSON and Parquet/index.md"
+          - Deep Dive: "stages/1. Foundations/1.3 Data Handling/1.3.1 CSV JSON and Parquet/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.3 Data Handling/1.3.1 CSV JSON and Parquet/examples-and-practice.md"
+        - "1.3.2 Pandas and NumPy Workflow":
+          - Overview: "stages/1. Foundations/1.3 Data Handling/1.3.2 Pandas and NumPy Workflow/index.md"
+          - Deep Dive: "stages/1. Foundations/1.3 Data Handling/1.3.2 Pandas and NumPy Workflow/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.3 Data Handling/1.3.2 Pandas and NumPy Workflow/examples-and-practice.md"
+        - "1.3.3 Data Validation and Schemas":
+          - Overview: "stages/1. Foundations/1.3 Data Handling/1.3.3 Data Validation and Schemas/index.md"
+          - Deep Dive: "stages/1. Foundations/1.3 Data Handling/1.3.3 Data Validation and Schemas/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.3 Data Handling/1.3.3 Data Validation and Schemas/examples-and-practice.md"
+        - "1.3.4 Visualization for Debugging":
+          - Overview: "stages/1. Foundations/1.3 Data Handling/1.3.4 Visualization for Debugging/index.md"
+          - Deep Dive: "stages/1. Foundations/1.3 Data Handling/1.3.4 Visualization for Debugging/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.3 Data Handling/1.3.4 Visualization for Debugging/examples-and-practice.md"
+      - "1.4 Databases and Storage":
+        - Overview: "stages/1. Foundations/1.4 Databases and Storage/index.md"
+        - "1.4.1 SQL Tables and Joins":
+          - Overview: "stages/1. Foundations/1.4 Databases and Storage/1.4.1 SQL Tables and Joins/index.md"
+          - Deep Dive: "stages/1. Foundations/1.4 Databases and Storage/1.4.1 SQL Tables and Joins/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.4 Databases and Storage/1.4.1 SQL Tables and Joins/examples-and-practice.md"
+        - "1.4.2 Indexes Transactions and Query Plans":
+          - Overview: "stages/1. Foundations/1.4 Databases and Storage/1.4.2 Indexes Transactions and Query Plans/index.md"
+          - Deep Dive: "stages/1. Foundations/1.4 Databases and Storage/1.4.2 Indexes Transactions and Query Plans/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.4 Databases and Storage/1.4.2 Indexes Transactions and Query Plans/examples-and-practice.md"
+        - "1.4.3 Document Stores and Object Storage":
+          - Overview: "stages/1. Foundations/1.4 Databases and Storage/1.4.3 Document Stores and Object Storage/index.md"
+          - Deep Dive: "stages/1. Foundations/1.4 Databases and Storage/1.4.3 Document Stores and Object Storage/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.4 Databases and Storage/1.4.3 Document Stores and Object Storage/examples-and-practice.md"
+        - "1.4.4 Vector Database Preview":
+          - Overview: "stages/1. Foundations/1.4 Databases and Storage/1.4.4 Vector Database Preview/index.md"
+          - Deep Dive: "stages/1. Foundations/1.4 Databases and Storage/1.4.4 Vector Database Preview/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.4 Databases and Storage/1.4.4 Vector Database Preview/examples-and-practice.md"
+      - "1.5 Web and API Basics":
+        - Overview: "stages/1. Foundations/1.5 Web and API Basics/index.md"
+        - "1.5.1 HTTP Methods and Status Codes":
+          - Overview: "stages/1. Foundations/1.5 Web and API Basics/1.5.1 HTTP Methods and Status Codes/index.md"
+          - Deep Dive: "stages/1. Foundations/1.5 Web and API Basics/1.5.1 HTTP Methods and Status Codes/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.5 Web and API Basics/1.5.1 HTTP Methods and Status Codes/examples-and-practice.md"
+        - "1.5.2 JSON Contracts and Validation":
+          - Overview: "stages/1. Foundations/1.5 Web and API Basics/1.5.2 JSON Contracts and Validation/index.md"
+          - Deep Dive: "stages/1. Foundations/1.5 Web and API Basics/1.5.2 JSON Contracts and Validation/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.5 Web and API Basics/1.5.2 JSON Contracts and Validation/examples-and-practice.md"
+        - "1.5.3 REST APIs and Streaming":
+          - Overview: "stages/1. Foundations/1.5 Web and API Basics/1.5.3 REST APIs and Streaming/index.md"
+          - Deep Dive: "stages/1. Foundations/1.5 Web and API Basics/1.5.3 REST APIs and Streaming/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.5 Web and API Basics/1.5.3 REST APIs and Streaming/examples-and-practice.md"
+        - "1.5.4 Auth Headers and Rate Limits":
+          - Overview: "stages/1. Foundations/1.5 Web and API Basics/1.5.4 Auth Headers and Rate Limits/index.md"
+          - Deep Dive: "stages/1. Foundations/1.5 Web and API Basics/1.5.4 Auth Headers and Rate Limits/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.5 Web and API Basics/1.5.4 Auth Headers and Rate Limits/examples-and-practice.md"
+      - "1.6 Systems Thinking Basics":
+        - Overview: "stages/1. Foundations/1.6 Systems Thinking Basics/index.md"
+        - "1.6.1 Complexity and Runtime Costs":
+          - Overview: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.1 Complexity and Runtime Costs/index.md"
+          - Deep Dive: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.1 Complexity and Runtime Costs/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.1 Complexity and Runtime Costs/examples-and-practice.md"
+        - "1.6.2 Processes Threads and Async IO":
+          - Overview: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.2 Processes Threads and Async IO/index.md"
+          - Deep Dive: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.2 Processes Threads and Async IO/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.2 Processes Threads and Async IO/examples-and-practice.md"
+        - "1.6.3 Queues Caches and Background Jobs":
+          - Overview: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.3 Queues Caches and Background Jobs/index.md"
+          - Deep Dive: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.3 Queues Caches and Background Jobs/deep-dive.md"
+          - Examples and Practice: "stages/1. Foundations/1.6 Systems Thinking Basics/1.6.3 Queues Caches and Background Jobs/examples-and-practice.md"
+    - "2. Machine Learning":
+      - Overview: "stages/2. Machine Learning/index.md"
+      - "2.1 Problem Framing":
+        - Overview: "stages/2. Machine Learning/2.1 Problem Framing/index.md"
+        - "2.1.1 Targets Labels and Features":
+          - Overview: "stages/2. Machine Learning/2.1 Problem Framing/2.1.1 Targets Labels and Features/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.1 Problem Framing/2.1.1 Targets Labels and Features/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.1 Problem Framing/2.1.1 Targets Labels and Features/examples-and-practice.md"
+        - "2.1.2 Prediction Time Availability":
+          - Overview: "stages/2. Machine Learning/2.1 Problem Framing/2.1.2 Prediction Time Availability/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.1 Problem Framing/2.1.2 Prediction Time Availability/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.1 Problem Framing/2.1.2 Prediction Time Availability/examples-and-practice.md"
+        - "2.1.3 Label Noise and Annotation Quality":
+          - Overview: "stages/2. Machine Learning/2.1 Problem Framing/2.1.3 Label Noise and Annotation Quality/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.1 Problem Framing/2.1.3 Label Noise and Annotation Quality/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.1 Problem Framing/2.1.3 Label Noise and Annotation Quality/examples-and-practice.md"
+        - "2.1.4 Baseline Definition":
+          - Overview: "stages/2. Machine Learning/2.1 Problem Framing/2.1.4 Baseline Definition/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.1 Problem Framing/2.1.4 Baseline Definition/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.1 Problem Framing/2.1.4 Baseline Definition/examples-and-practice.md"
+      - "2.2 Splits and Leakage":
+        - Overview: "stages/2. Machine Learning/2.2 Splits and Leakage/index.md"
+        - "2.2.1 Train Validation and Test Sets":
+          - Overview: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.1 Train Validation and Test Sets/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.1 Train Validation and Test Sets/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.1 Train Validation and Test Sets/examples-and-practice.md"
+        - "2.2.2 Time and Group Splits":
+          - Overview: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.2 Time and Group Splits/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.2 Time and Group Splits/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.2 Time and Group Splits/examples-and-practice.md"
+        - "2.2.3 Data Leakage Patterns":
+          - Overview: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.3 Data Leakage Patterns/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.3 Data Leakage Patterns/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.3 Data Leakage Patterns/examples-and-practice.md"
+        - "2.2.4 Preprocessing Without Leakage":
+          - Overview: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.4 Preprocessing Without Leakage/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.4 Preprocessing Without Leakage/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.2 Splits and Leakage/2.2.4 Preprocessing Without Leakage/examples-and-practice.md"
+      - "2.3 Supervised Models":
+        - Overview: "stages/2. Machine Learning/2.3 Supervised Models/index.md"
+        - "2.3.1 Linear and Logistic Models":
+          - Overview: "stages/2. Machine Learning/2.3 Supervised Models/2.3.1 Linear and Logistic Models/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.3 Supervised Models/2.3.1 Linear and Logistic Models/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.3 Supervised Models/2.3.1 Linear and Logistic Models/examples-and-practice.md"
+        - "2.3.2 Decision Trees and Random Forests":
+          - Overview: "stages/2. Machine Learning/2.3 Supervised Models/2.3.2 Decision Trees and Random Forests/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.3 Supervised Models/2.3.2 Decision Trees and Random Forests/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.3 Supervised Models/2.3.2 Decision Trees and Random Forests/examples-and-practice.md"
+        - "2.3.3 Gradient Boosted Trees":
+          - Overview: "stages/2. Machine Learning/2.3 Supervised Models/2.3.3 Gradient Boosted Trees/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.3 Supervised Models/2.3.3 Gradient Boosted Trees/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.3 Supervised Models/2.3.3 Gradient Boosted Trees/examples-and-practice.md"
+        - "2.3.4 Model Pipelines and Hyperparameters":
+          - Overview: "stages/2. Machine Learning/2.3 Supervised Models/2.3.4 Model Pipelines and Hyperparameters/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.3 Supervised Models/2.3.4 Model Pipelines and Hyperparameters/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.3 Supervised Models/2.3.4 Model Pipelines and Hyperparameters/examples-and-practice.md"
+        - "2.3.5 Interpretability and Feature Importance":
+          - Overview: "stages/2. Machine Learning/2.3 Supervised Models/2.3.5 Interpretability and Feature Importance/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.3 Supervised Models/2.3.5 Interpretability and Feature Importance/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.3 Supervised Models/2.3.5 Interpretability and Feature Importance/examples-and-practice.md"
+      - "2.4 Metrics and Error Analysis":
+        - Overview: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/index.md"
+        - "2.4.1 Classification Metrics":
+          - Overview: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.1 Classification Metrics/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.1 Classification Metrics/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.1 Classification Metrics/examples-and-practice.md"
+        - "2.4.2 Regression and Ranking Metrics":
+          - Overview: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.2 Regression and Ranking Metrics/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.2 Regression and Ranking Metrics/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.2 Regression and Ranking Metrics/examples-and-practice.md"
+        - "2.4.3 Calibration and Thresholds":
+          - Overview: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.3 Calibration and Thresholds/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.3 Calibration and Thresholds/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.3 Calibration and Thresholds/examples-and-practice.md"
+        - "2.4.4 Slice Based Error Analysis":
+          - Overview: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.4 Slice Based Error Analysis/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.4 Slice Based Error Analysis/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.4 Metrics and Error Analysis/2.4.4 Slice Based Error Analysis/examples-and-practice.md"
+      - "2.5 Unsupervised Representations":
+        - Overview: "stages/2. Machine Learning/2.5 Unsupervised Representations/index.md"
+        - "2.5.1 Clustering and Similarity":
+          - Overview: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.1 Clustering and Similarity/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.1 Clustering and Similarity/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.1 Clustering and Similarity/examples-and-practice.md"
+        - "2.5.2 Dimensionality Reduction":
+          - Overview: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.2 Dimensionality Reduction/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.2 Dimensionality Reduction/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.2 Dimensionality Reduction/examples-and-practice.md"
+        - "2.5.3 Embeddings as Representations":
+          - Overview: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.3 Embeddings as Representations/index.md"
+          - Deep Dive: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.3 Embeddings as Representations/deep-dive.md"
+          - Examples and Practice: "stages/2. Machine Learning/2.5 Unsupervised Representations/2.5.3 Embeddings as Representations/examples-and-practice.md"
+    - "3. Deep Learning":
+      - Overview: "stages/3. Deep Learning/index.md"
+      - "3.1 Neural Network Core":
+        - Overview: "stages/3. Deep Learning/3.1 Neural Network Core/index.md"
+        - "3.1.1 Tensors and Shapes":
+          - Overview: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.1 Tensors and Shapes/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.1 Tensors and Shapes/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.1 Tensors and Shapes/examples-and-practice.md"
+        - "3.1.2 Layers Activations and Parameters":
+          - Overview: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.2 Layers Activations and Parameters/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.2 Layers Activations and Parameters/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.2 Layers Activations and Parameters/examples-and-practice.md"
+        - "3.1.3 Loss Functions":
+          - Overview: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.3 Loss Functions/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.3 Loss Functions/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.3 Loss Functions/examples-and-practice.md"
+        - "3.1.4 Backpropagation and Autograd":
+          - Overview: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.4 Backpropagation and Autograd/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.4 Backpropagation and Autograd/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.1 Neural Network Core/3.1.4 Backpropagation and Autograd/examples-and-practice.md"
+      - "3.2 Training Loop Engineering":
+        - Overview: "stages/3. Deep Learning/3.2 Training Loop Engineering/index.md"
+        - "3.2.1 Datasets and Dataloaders":
+          - Overview: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.1 Datasets and Dataloaders/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.1 Datasets and Dataloaders/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.1 Datasets and Dataloaders/examples-and-practice.md"
+        - "3.2.2 Batching and Device Placement":
+          - Overview: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.2 Batching and Device Placement/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.2 Batching and Device Placement/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.2 Batching and Device Placement/examples-and-practice.md"
+        - "3.2.3 Training and Evaluation Modes":
+          - Overview: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.3 Training and Evaluation Modes/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.3 Training and Evaluation Modes/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.3 Training and Evaluation Modes/examples-and-practice.md"
+        - "3.2.4 Checkpoints and Resume Logic":
+          - Overview: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.4 Checkpoints and Resume Logic/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.4 Checkpoints and Resume Logic/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.2 Training Loop Engineering/3.2.4 Checkpoints and Resume Logic/examples-and-practice.md"
+      - "3.3 Optimization Dynamics":
+        - Overview: "stages/3. Deep Learning/3.3 Optimization Dynamics/index.md"
+        - "3.3.1 SGD Adam and Weight Decay":
+          - Overview: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.1 SGD Adam and Weight Decay/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.1 SGD Adam and Weight Decay/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.1 SGD Adam and Weight Decay/examples-and-practice.md"
+        - "3.3.2 Learning Rate Schedules":
+          - Overview: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.2 Learning Rate Schedules/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.2 Learning Rate Schedules/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.2 Learning Rate Schedules/examples-and-practice.md"
+        - "3.3.3 Initialization and Normalization":
+          - Overview: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.3 Initialization and Normalization/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.3 Initialization and Normalization/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.3 Initialization and Normalization/examples-and-practice.md"
+        - "3.3.4 Regularization and Data Augmentation":
+          - Overview: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.4 Regularization and Data Augmentation/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.4 Regularization and Data Augmentation/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.3 Optimization Dynamics/3.3.4 Regularization and Data Augmentation/examples-and-practice.md"
+      - "3.4 Architectures and Modalities":
+        - Overview: "stages/3. Deep Learning/3.4 Architectures and Modalities/index.md"
+        - "3.4.1 MLPs CNNs and Sequence Models":
+          - Overview: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.1 MLPs CNNs and Sequence Models/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.1 MLPs CNNs and Sequence Models/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.1 MLPs CNNs and Sequence Models/examples-and-practice.md"
+        - "3.4.2 Attention as a Bridge to Transformers":
+          - Overview: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.2 Attention as a Bridge to Transformers/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.2 Attention as a Bridge to Transformers/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.2 Attention as a Bridge to Transformers/examples-and-practice.md"
+        - "3.4.3 Transfer Learning":
+          - Overview: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.3 Transfer Learning/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.3 Transfer Learning/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.3 Transfer Learning/examples-and-practice.md"
+        - "3.4.4 Multimodal Model Basics":
+          - Overview: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.4 Multimodal Model Basics/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.4 Multimodal Model Basics/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.4 Architectures and Modalities/3.4.4 Multimodal Model Basics/examples-and-practice.md"
+      - "3.5 Debugging Neural Systems":
+        - Overview: "stages/3. Deep Learning/3.5 Debugging Neural Systems/index.md"
+        - "3.5.1 Sanity Checks and Tiny Overfit Tests":
+          - Overview: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.1 Sanity Checks and Tiny Overfit Tests/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.1 Sanity Checks and Tiny Overfit Tests/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.1 Sanity Checks and Tiny Overfit Tests/examples-and-practice.md"
+        - "3.5.2 Gradient Problems":
+          - Overview: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.2 Gradient Problems/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.2 Gradient Problems/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.2 Gradient Problems/examples-and-practice.md"
+        - "3.5.3 Numerical Stability and Precision":
+          - Overview: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.3 Numerical Stability and Precision/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.3 Numerical Stability and Precision/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.5 Debugging Neural Systems/3.5.3 Numerical Stability and Precision/examples-and-practice.md"
+      - "3.6 Hardware Aware Training Preview":
+        - Overview: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/index.md"
+        - "3.6.1 GPU Utilization Basics":
+          - Overview: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.1 GPU Utilization Basics/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.1 GPU Utilization Basics/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.1 GPU Utilization Basics/examples-and-practice.md"
+        - "3.6.2 Memory Footprint":
+          - Overview: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.2 Memory Footprint/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.2 Memory Footprint/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.2 Memory Footprint/examples-and-practice.md"
+        - "3.6.3 Profiling Training Runs":
+          - Overview: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.3 Profiling Training Runs/index.md"
+          - Deep Dive: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.3 Profiling Training Runs/deep-dive.md"
+          - Examples and Practice: "stages/3. Deep Learning/3.6 Hardware Aware Training Preview/3.6.3 Profiling Training Runs/examples-and-practice.md"
+    - "4. LLMs":
+      - Overview: "stages/4. LLMs/index.md"
+      - "4.1 Token and Context Mechanics":
+        - Overview: "stages/4. LLMs/4.1 Token and Context Mechanics/index.md"
+        - "4.1.1 Tokenization and Subwords":
+          - Overview: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.1 Tokenization and Subwords/index.md"
+          - Deep Dive: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.1 Tokenization and Subwords/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.1 Tokenization and Subwords/examples-and-practice.md"
+        - "4.1.2 Context Windows and Truncation":
+          - Overview: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.2 Context Windows and Truncation/index.md"
+          - Deep Dive: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.2 Context Windows and Truncation/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.2 Context Windows and Truncation/examples-and-practice.md"
+        - "4.1.3 Prompt Packing and Context Efficiency":
+          - Overview: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.3 Prompt Packing and Context Efficiency/index.md"
+          - Deep Dive: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.3 Prompt Packing and Context Efficiency/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.3 Prompt Packing and Context Efficiency/examples-and-practice.md"
+        - "4.1.4 Token Based Pricing":
+          - Overview: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.4 Token Based Pricing/index.md"
+          - Deep Dive: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.4 Token Based Pricing/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.1 Token and Context Mechanics/4.1.4 Token Based Pricing/examples-and-practice.md"
+      - "4.2 Transformer Mental Model":
+        - Overview: "stages/4. LLMs/4.2 Transformer Mental Model/index.md"
+        - "4.2.1 Embeddings and Positional Information":
+          - Overview: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.1 Embeddings and Positional Information/index.md"
+          - Deep Dive: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.1 Embeddings and Positional Information/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.1 Embeddings and Positional Information/examples-and-practice.md"
+        - "4.2.2 Self Attention QKV":
+          - Overview: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.2 Self Attention QKV/index.md"
+          - Deep Dive: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.2 Self Attention QKV/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.2 Self Attention QKV/examples-and-practice.md"
+        - "4.2.3 MLP Blocks Residuals and Normalization":
+          - Overview: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.3 MLP Blocks Residuals and Normalization/index.md"
+          - Deep Dive: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.3 MLP Blocks Residuals and Normalization/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.3 MLP Blocks Residuals and Normalization/examples-and-practice.md"
+        - "4.2.4 Causal Masking":
+          - Overview: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.4 Causal Masking/index.md"
+          - Deep Dive: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.4 Causal Masking/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.2 Transformer Mental Model/4.2.4 Causal Masking/examples-and-practice.md"
+      - "4.3 Generation Controls":
+        - Overview: "stages/4. LLMs/4.3 Generation Controls/index.md"
+        - "4.3.1 Logits and Softmax":
+          - Overview: "stages/4. LLMs/4.3 Generation Controls/4.3.1 Logits and Softmax/index.md"
+          - Deep Dive: "stages/4. LLMs/4.3 Generation Controls/4.3.1 Logits and Softmax/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.3 Generation Controls/4.3.1 Logits and Softmax/examples-and-practice.md"
+        - "4.3.2 Temperature Top-p and Top-k":
+          - Overview: "stages/4. LLMs/4.3 Generation Controls/4.3.2 Temperature Top-p and Top-k/index.md"
+          - Deep Dive: "stages/4. LLMs/4.3 Generation Controls/4.3.2 Temperature Top-p and Top-k/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.3 Generation Controls/4.3.2 Temperature Top-p and Top-k/examples-and-practice.md"
+        - "4.3.3 Stop Sequences and Max Tokens":
+          - Overview: "stages/4. LLMs/4.3 Generation Controls/4.3.3 Stop Sequences and Max Tokens/index.md"
+          - Deep Dive: "stages/4. LLMs/4.3 Generation Controls/4.3.3 Stop Sequences and Max Tokens/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.3 Generation Controls/4.3.3 Stop Sequences and Max Tokens/examples-and-practice.md"
+        - "4.3.4 Structured Outputs and JSON Schemas":
+          - Overview: "stages/4. LLMs/4.3 Generation Controls/4.3.4 Structured Outputs and JSON Schemas/index.md"
+          - Deep Dive: "stages/4. LLMs/4.3 Generation Controls/4.3.4 Structured Outputs and JSON Schemas/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.3 Generation Controls/4.3.4 Structured Outputs and JSON Schemas/examples-and-practice.md"
+      - "4.4 Model Landscape":
+        - Overview: "stages/4. LLMs/4.4 Model Landscape/index.md"
+        - "4.4.1 Closed API and Open Weight Models":
+          - Overview: "stages/4. LLMs/4.4 Model Landscape/4.4.1 Closed API and Open Weight Models/index.md"
+          - Deep Dive: "stages/4. LLMs/4.4 Model Landscape/4.4.1 Closed API and Open Weight Models/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.4 Model Landscape/4.4.1 Closed API and Open Weight Models/examples-and-practice.md"
+        - "4.4.2 Base Instruct Reasoning and Multimodal Models":
+          - Overview: "stages/4. LLMs/4.4 Model Landscape/4.4.2 Base Instruct Reasoning and Multimodal Models/index.md"
+          - Deep Dive: "stages/4. LLMs/4.4 Model Landscape/4.4.2 Base Instruct Reasoning and Multimodal Models/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.4 Model Landscape/4.4.2 Base Instruct Reasoning and Multimodal Models/examples-and-practice.md"
+        - "4.4.3 Licenses and Data Policies":
+          - Overview: "stages/4. LLMs/4.4 Model Landscape/4.4.3 Licenses and Data Policies/index.md"
+          - Deep Dive: "stages/4. LLMs/4.4 Model Landscape/4.4.3 Licenses and Data Policies/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.4 Model Landscape/4.4.3 Licenses and Data Policies/examples-and-practice.md"
+        - "4.4.4 Build Buy Host or Route":
+          - Overview: "stages/4. LLMs/4.4 Model Landscape/4.4.4 Build Buy Host or Route/index.md"
+          - Deep Dive: "stages/4. LLMs/4.4 Model Landscape/4.4.4 Build Buy Host or Route/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.4 Model Landscape/4.4.4 Build Buy Host or Route/examples-and-practice.md"
+      - "4.5 Prompting and In-Context Learning":
+        - Overview: "stages/4. LLMs/4.5 Prompting and In-Context Learning/index.md"
+        - "4.5.1 Prompt Anatomy":
+          - Overview: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.1 Prompt Anatomy/index.md"
+          - Deep Dive: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.1 Prompt Anatomy/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.1 Prompt Anatomy/examples-and-practice.md"
+        - "4.5.2 Zero Shot Few Shot and Examples":
+          - Overview: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.2 Zero Shot Few Shot and Examples/index.md"
+          - Deep Dive: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.2 Zero Shot Few Shot and Examples/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.2 Zero Shot Few Shot and Examples/examples-and-practice.md"
+        - "4.5.3 Task Decomposition":
+          - Overview: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.3 Task Decomposition/index.md"
+          - Deep Dive: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.3 Task Decomposition/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.3 Task Decomposition/examples-and-practice.md"
+        - "4.5.4 Prompt Versioning and Tests":
+          - Overview: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.4 Prompt Versioning and Tests/index.md"
+          - Deep Dive: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.4 Prompt Versioning and Tests/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.5 Prompting and In-Context Learning/4.5.4 Prompt Versioning and Tests/examples-and-practice.md"
+      - "4.6 Fine-Tuning and Dataset Engineering":
+        - Overview: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/index.md"
+        - "4.6.1 When to Fine Tune":
+          - Overview: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.1 When to Fine Tune/index.md"
+          - Deep Dive: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.1 When to Fine Tune/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.1 When to Fine Tune/examples-and-practice.md"
+        - "4.6.2 Instruction and Preference Data":
+          - Overview: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.2 Instruction and Preference Data/index.md"
+          - Deep Dive: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.2 Instruction and Preference Data/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.2 Instruction and Preference Data/examples-and-practice.md"
+        - "4.6.3 PEFT LoRA and QLoRA":
+          - Overview: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.3 PEFT LoRA and QLoRA/index.md"
+          - Deep Dive: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.3 PEFT LoRA and QLoRA/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.3 PEFT LoRA and QLoRA/examples-and-practice.md"
+        - "4.6.4 Fine Tuning Evaluation":
+          - Overview: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.4 Fine Tuning Evaluation/index.md"
+          - Deep Dive: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.4 Fine Tuning Evaluation/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.6 Fine-Tuning and Dataset Engineering/4.6.4 Fine Tuning Evaluation/examples-and-practice.md"
+      - "4.7 LLM Evaluation Methodology":
+        - Overview: "stages/4. LLMs/4.7 LLM Evaluation Methodology/index.md"
+        - "4.7.1 Exact and Functional Evaluation":
+          - Overview: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.1 Exact and Functional Evaluation/index.md"
+          - Deep Dive: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.1 Exact and Functional Evaluation/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.1 Exact and Functional Evaluation/examples-and-practice.md"
+        - "4.7.2 AI as Judge":
+          - Overview: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.2 AI as Judge/index.md"
+          - Deep Dive: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.2 AI as Judge/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.2 AI as Judge/examples-and-practice.md"
+        - "4.7.3 Comparative Evaluation":
+          - Overview: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.3 Comparative Evaluation/index.md"
+          - Deep Dive: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.3 Comparative Evaluation/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.7 LLM Evaluation Methodology/4.7.3 Comparative Evaluation/examples-and-practice.md"
+    - "5. AI Applications":
+      - Overview: "stages/5. AI Applications/index.md"
+      - "5.1 AI Product Interface":
+        - Overview: "stages/5. AI Applications/5.1 AI Product Interface/index.md"
+        - "5.1.1 Conversation UX":
+          - Overview: "stages/5. AI Applications/5.1 AI Product Interface/5.1.1 Conversation UX/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.1 AI Product Interface/5.1.1 Conversation UX/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.1 AI Product Interface/5.1.1 Conversation UX/examples-and-practice.md"
+        - "5.1.2 Uncertainty and Abstention":
+          - Overview: "stages/5. AI Applications/5.1 AI Product Interface/5.1.2 Uncertainty and Abstention/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.1 AI Product Interface/5.1.2 Uncertainty and Abstention/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.1 AI Product Interface/5.1.2 Uncertainty and Abstention/examples-and-practice.md"
+        - "5.1.3 Citations and Evidence":
+          - Overview: "stages/5. AI Applications/5.1 AI Product Interface/5.1.3 Citations and Evidence/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.1 AI Product Interface/5.1.3 Citations and Evidence/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.1 AI Product Interface/5.1.3 Citations and Evidence/examples-and-practice.md"
+        - "5.1.4 Human Escalation":
+          - Overview: "stages/5. AI Applications/5.1 AI Product Interface/5.1.4 Human Escalation/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.1 AI Product Interface/5.1.4 Human Escalation/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.1 AI Product Interface/5.1.4 Human Escalation/examples-and-practice.md"
+      - "5.2 Prompt System Engineering":
+        - Overview: "stages/5. AI Applications/5.2 Prompt System Engineering/index.md"
+        - "5.2.1 System and User Prompts":
+          - Overview: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.1 System and User Prompts/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.1 System and User Prompts/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.1 System and User Prompts/examples-and-practice.md"
+        - "5.2.2 Examples Constraints and Formatting":
+          - Overview: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.2 Examples Constraints and Formatting/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.2 Examples Constraints and Formatting/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.2 Examples Constraints and Formatting/examples-and-practice.md"
+        - "5.2.3 Prompt Regression Testing":
+          - Overview: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.3 Prompt Regression Testing/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.3 Prompt Regression Testing/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.3 Prompt Regression Testing/examples-and-practice.md"
+        - "5.2.4 Prompt Security Basics":
+          - Overview: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.4 Prompt Security Basics/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.4 Prompt Security Basics/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.2 Prompt System Engineering/5.2.4 Prompt Security Basics/examples-and-practice.md"
+      - "5.3 RAG Ingestion":
+        - Overview: "stages/5. AI Applications/5.3 RAG Ingestion/index.md"
+        - "5.3.1 Document Parsing and Cleaning":
+          - Overview: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.1 Document Parsing and Cleaning/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.1 Document Parsing and Cleaning/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.1 Document Parsing and Cleaning/examples-and-practice.md"
+        - "5.3.2 Chunk Size and Overlap":
+          - Overview: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.2 Chunk Size and Overlap/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.2 Chunk Size and Overlap/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.2 Chunk Size and Overlap/examples-and-practice.md"
+        - "5.3.3 Metadata and Filtering":
+          - Overview: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.3 Metadata and Filtering/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.3 Metadata and Filtering/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.3 Metadata and Filtering/examples-and-practice.md"
+        - "5.3.4 Deduplication and Freshness":
+          - Overview: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.4 Deduplication and Freshness/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.4 Deduplication and Freshness/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.4 Deduplication and Freshness/examples-and-practice.md"
+        - "5.3.5 Multimodal RAG Preview":
+          - Overview: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.5 Multimodal RAG Preview/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.5 Multimodal RAG Preview/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.3 RAG Ingestion/5.3.5 Multimodal RAG Preview/examples-and-practice.md"
+      - "5.4 Retrieval and Reranking":
+        - Overview: "stages/5. AI Applications/5.4 Retrieval and Reranking/index.md"
+        - "5.4.1 BM25 Term Retrieval":
+          - Overview: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.1 BM25 Term Retrieval/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.1 BM25 Term Retrieval/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.1 BM25 Term Retrieval/examples-and-practice.md"
+        - "5.4.2 Embeddings and Vector Search":
+          - Overview: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.2 Embeddings and Vector Search/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.2 Embeddings and Vector Search/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.2 Embeddings and Vector Search/examples-and-practice.md"
+        - "5.4.3 Hybrid Search":
+          - Overview: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.3 Hybrid Search/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.3 Hybrid Search/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.3 Hybrid Search/examples-and-practice.md"
+        - "5.4.4 Reranking and Query Rewriting":
+          - Overview: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.4 Reranking and Query Rewriting/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.4 Reranking and Query Rewriting/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.4 Retrieval and Reranking/5.4.4 Reranking and Query Rewriting/examples-and-practice.md"
+      - "5.5 Grounded Generation":
+        - Overview: "stages/5. AI Applications/5.5 Grounded Generation/index.md"
+        - "5.5.1 Context Assembly":
+          - Overview: "stages/5. AI Applications/5.5 Grounded Generation/5.5.1 Context Assembly/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.5 Grounded Generation/5.5.1 Context Assembly/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.5 Grounded Generation/5.5.1 Context Assembly/examples-and-practice.md"
+        - "5.5.2 Citation Policy":
+          - Overview: "stages/5. AI Applications/5.5 Grounded Generation/5.5.2 Citation Policy/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.5 Grounded Generation/5.5.2 Citation Policy/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.5 Grounded Generation/5.5.2 Citation Policy/examples-and-practice.md"
+        - "5.5.3 Conflict Handling":
+          - Overview: "stages/5. AI Applications/5.5 Grounded Generation/5.5.3 Conflict Handling/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.5 Grounded Generation/5.5.3 Conflict Handling/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.5 Grounded Generation/5.5.3 Conflict Handling/examples-and-practice.md"
+      - "5.6 Application Evaluation and Feedback":
+        - Overview: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/index.md"
+        - "5.6.1 Golden Sets and Rubrics":
+          - Overview: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.1 Golden Sets and Rubrics/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.1 Golden Sets and Rubrics/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.1 Golden Sets and Rubrics/examples-and-practice.md"
+        - "5.6.2 Retrieval Evaluation":
+          - Overview: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.2 Retrieval Evaluation/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.2 Retrieval Evaluation/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.2 Retrieval Evaluation/examples-and-practice.md"
+        - "5.6.3 Answer Evaluation":
+          - Overview: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.3 Answer Evaluation/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.3 Answer Evaluation/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.3 Answer Evaluation/examples-and-practice.md"
+        - "5.6.4 Feedback Loops and Data Flywheels":
+          - Overview: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.4 Feedback Loops and Data Flywheels/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.4 Feedback Loops and Data Flywheels/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.6 Application Evaluation and Feedback/5.6.4 Feedback Loops and Data Flywheels/examples-and-practice.md"
+      - "5.7 Guardrails and Release Architecture":
+        - Overview: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/index.md"
+        - "5.7.1 Model Gateways Routers and Caches":
+          - Overview: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.1 Model Gateways Routers and Caches/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.1 Model Gateways Routers and Caches/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.1 Model Gateways Routers and Caches/examples-and-practice.md"
+        - "5.7.2 Input and Output Guardrails":
+          - Overview: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.2 Input and Output Guardrails/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.2 Input and Output Guardrails/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.2 Input and Output Guardrails/examples-and-practice.md"
+        - "5.7.3 Monitoring Rollback and Incidents":
+          - Overview: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.3 Monitoring Rollback and Incidents/index.md"
+          - Deep Dive: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.3 Monitoring Rollback and Incidents/deep-dive.md"
+          - Examples and Practice: "stages/5. AI Applications/5.7 Guardrails and Release Architecture/5.7.3 Monitoring Rollback and Incidents/examples-and-practice.md"
     - "6. AI Agents":
       - Overview: "stages/6. AI Agents/index.md"
-      - "6.0 Prerequisites":
-        - Overview: "stages/6. AI Agents/6.0 Prerequisites/index.md"
-        - "Basic Knowledge": "stages/6. AI Agents/6.0 Prerequisites/Basic Knowledge/index.md"
-        - "Transformer Models and LLMs": "stages/6. AI Agents/6.0 Prerequisites/Transformer Models and LLMs/index.md"
-        - "Model Families and Licenses": "stages/6. AI Agents/6.0 Prerequisites/Model Families and Licenses/index.md"
-        - "Understand the Basics": "stages/6. AI Agents/6.0 Prerequisites/Understand the Basics/index.md"
-      - "6.1 LLM Fundamentals":
-        - Overview: "stages/6. AI Agents/6.1 LLM Fundamentals/index.md"
-        - "Agent Loop": "stages/6. AI Agents/6.1 LLM Fundamentals/Agent Loop/index.md"
-        - "Tokenization": "stages/6. AI Agents/6.1 LLM Fundamentals/Tokenization/index.md"
-        - "Context Windows and Token Based Pricing": "stages/6. AI Agents/6.1 LLM Fundamentals/Context Windows and Token Based Pricing/index.md"
-        - "Temperature, Top-p, Top-k": "stages/6. AI Agents/6.1 LLM Fundamentals/Temperature, Top-p, Top-k/index.md"
-        - "Frequency and Presence Penalty": "stages/6. AI Agents/6.1 LLM Fundamentals/Frequency and Presence Penalty/index.md"
-        - "Stopping Criteria and Max Length": "stages/6. AI Agents/6.1 LLM Fundamentals/Stopping Criteria and Max Length/index.md"
-      - "6.2 Prompt Engineering":
-        - "Sub-stage Overview": "stages/6. AI Agents/6.2 Prompt Engineering/index.md"
-        - "Overview": "stages/6. AI Agents/6.2 Prompt Engineering/Overview/index.md"
-        - "Be Specific in What You Want": "stages/6. AI Agents/6.2 Prompt Engineering/Be Specific in What You Want/index.md"
-        - "Provide Additional Context": "stages/6. AI Agents/6.2 Prompt Engineering/Provide Additional Context/index.md"
-        - "Use Relevant Technical Terms": "stages/6. AI Agents/6.2 Prompt Engineering/Use Relevant Technical Terms/index.md"
-        - "Use Examples in Your Prompt": "stages/6. AI Agents/6.2 Prompt Engineering/Use Examples in Your Prompt/index.md"
-        - "Iterate and Test Your Prompts": "stages/6. AI Agents/6.2 Prompt Engineering/Iterate and Test Your Prompts/index.md"
-        - "Specify Length, Format, etc": "stages/6. AI Agents/6.2 Prompt Engineering/Specify Length, Format, etc/index.md"
-        - "Prompt Engineering Roadmap":
-          - Overview: "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/index.md"
-          - "LLMs and How They Work": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/LLMs and How They Work/index.md"
-          - "What Is a Prompt": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/What Is a Prompt/index.md"
-          - "What Is Prompt Engineering": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/What Is Prompt Engineering/index.md"
-          - "LLM Providers": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/LLM Providers/index.md"
-          - "Core LLM Concepts": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Core LLM Concepts/index.md"
-          - "LLM Configuration": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/LLM Configuration/index.md"
-          - "Output Control": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Output Control/index.md"
-          - "Structured Outputs": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Structured Outputs/index.md"
-          - "Prompting Techniques": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Prompting Techniques/index.md"
-          - "Automatic Prompt Engineering": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Automatic Prompt Engineering/index.md"
-          - "Prompting Best Practices": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Prompting Best Practices/index.md"
-          - "Prompt Debiasing": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Prompt Debiasing/index.md"
-          - "Prompt Ensembling": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Prompt Ensembling/index.md"
-          - "LLM Self Evaluation": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/LLM Self Evaluation/index.md"
-          - "Calibrating LLMs": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Calibrating LLMs/index.md"
-          - "Prompt Tuning": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Prompt Tuning/index.md"
-          - "Related Roadmaps": "stages/6. AI Agents/6.2 Prompt Engineering/Prompt Engineering Roadmap/Related Roadmaps/index.md"
-      - "6.3 Tools and Actions": "stages/6. AI Agents/6.3 Tools and Actions/index.md"
-      - "6.4 Agent Memory": "stages/6. AI Agents/6.4 Agent Memory/index.md"
-      - "6.5 Architectures and MCP": "stages/6. AI Agents/6.5 Architectures and MCP/index.md"
-      - "6.6 Building Agents": "stages/6. AI Agents/6.6 Building Agents/index.md"
-      - "6.7 Evaluation and Observability": "stages/6. AI Agents/6.7 Evaluation and Observability/index.md"
-      - "6.8 Security and Ethics": "stages/6. AI Agents/6.8 Security and Ethics/index.md"
-      - "6.9 Capstone": "stages/6. AI Agents/6.9 Capstone/index.md"
-    - "7. Model Infrastructure": "stages/7. Model Infrastructure/index.md"
-    - "8. Optimization and Hardware": "stages/8. Optimization and Hardware/index.md"
-    - "9. Security, Blockchain, ZKML": "stages/9. Security, Blockchain, ZKML/index.md"
-    - "10. Mastery": "stages/10. Mastery/index.md"
-  - Tracks:
-    - Role Tracks: tracks/index.md
+      - "6.1 Agent Loop Fundamentals":
+        - Overview: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/index.md"
+        - "6.1.1 Agent State and Messages":
+          - Overview: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.1 Agent State and Messages/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.1 Agent State and Messages/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.1 Agent State and Messages/examples-and-practice.md"
+        - "6.1.2 Observe Reason Act Observe":
+          - Overview: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.2 Observe Reason Act Observe/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.2 Observe Reason Act Observe/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.2 Observe Reason Act Observe/examples-and-practice.md"
+        - "6.1.3 Final Answer and Stop Rules":
+          - Overview: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.3 Final Answer and Stop Rules/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.3 Final Answer and Stop Rules/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.3 Final Answer and Stop Rules/examples-and-practice.md"
+        - "6.1.4 Loop Budget and Cancellation":
+          - Overview: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.4 Loop Budget and Cancellation/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.4 Loop Budget and Cancellation/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.1 Agent Loop Fundamentals/6.1.4 Loop Budget and Cancellation/examples-and-practice.md"
+      - "6.2 Reasoning and Planning Patterns":
+        - Overview: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/index.md"
+        - "6.2.1 ReAct Pattern":
+          - Overview: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.1 ReAct Pattern/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.1 ReAct Pattern/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.1 ReAct Pattern/examples-and-practice.md"
+        - "6.2.2 Planner Executor":
+          - Overview: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.2 Planner Executor/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.2 Planner Executor/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.2 Planner Executor/examples-and-practice.md"
+        - "6.2.3 Reflection and Self Critique":
+          - Overview: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.3 Reflection and Self Critique/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.3 Reflection and Self Critique/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.3 Reflection and Self Critique/examples-and-practice.md"
+        - "6.2.4 Routing and Workflow Agents":
+          - Overview: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.4 Routing and Workflow Agents/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.4 Routing and Workflow Agents/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.2 Reasoning and Planning Patterns/6.2.4 Routing and Workflow Agents/examples-and-practice.md"
+      - "6.3 Tool Design":
+        - Overview: "stages/6. AI Agents/6.3 Tool Design/index.md"
+        - "6.3.1 Tool Contracts and JSON Schema":
+          - Overview: "stages/6. AI Agents/6.3 Tool Design/6.3.1 Tool Contracts and JSON Schema/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.3 Tool Design/6.3.1 Tool Contracts and JSON Schema/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.3 Tool Design/6.3.1 Tool Contracts and JSON Schema/examples-and-practice.md"
+        - "6.3.2 Function Calling":
+          - Overview: "stages/6. AI Agents/6.3 Tool Design/6.3.2 Function Calling/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.3 Tool Design/6.3.2 Function Calling/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.3 Tool Design/6.3.2 Function Calling/examples-and-practice.md"
+        - "6.3.3 Tool Errors Timeouts and Retries":
+          - Overview: "stages/6. AI Agents/6.3 Tool Design/6.3.3 Tool Errors Timeouts and Retries/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.3 Tool Design/6.3.3 Tool Errors Timeouts and Retries/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.3 Tool Design/6.3.3 Tool Errors Timeouts and Retries/examples-and-practice.md"
+        - "6.3.4 Idempotency and Side Effects":
+          - Overview: "stages/6. AI Agents/6.3 Tool Design/6.3.4 Idempotency and Side Effects/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.3 Tool Design/6.3.4 Idempotency and Side Effects/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.3 Tool Design/6.3.4 Idempotency and Side Effects/examples-and-practice.md"
+      - "6.4 MCP and Tool Ecosystems":
+        - Overview: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/index.md"
+        - "6.4.1 MCP Hosts Clients and Servers":
+          - Overview: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.1 MCP Hosts Clients and Servers/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.1 MCP Hosts Clients and Servers/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.1 MCP Hosts Clients and Servers/examples-and-practice.md"
+        - "6.4.2 Resources Tools and Prompts":
+          - Overview: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.2 Resources Tools and Prompts/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.2 Resources Tools and Prompts/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.2 Resources Tools and Prompts/examples-and-practice.md"
+        - "6.4.3 Local vs Remote MCP":
+          - Overview: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.3 Local vs Remote MCP/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.3 Local vs Remote MCP/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.3 Local vs Remote MCP/examples-and-practice.md"
+        - "6.4.4 Authentication and Exposure Boundaries":
+          - Overview: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.4 Authentication and Exposure Boundaries/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.4 Authentication and Exposure Boundaries/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.4 MCP and Tool Ecosystems/6.4.4 Authentication and Exposure Boundaries/examples-and-practice.md"
+      - "6.5 Memory and Agentic RAG":
+        - Overview: "stages/6. AI Agents/6.5 Memory and Agentic RAG/index.md"
+        - "6.5.1 Working Memory":
+          - Overview: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.1 Working Memory/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.1 Working Memory/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.1 Working Memory/examples-and-practice.md"
+        - "6.5.2 Long Term Memory Types":
+          - Overview: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.2 Long Term Memory Types/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.2 Long Term Memory Types/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.2 Long Term Memory Types/examples-and-practice.md"
+        - "6.5.3 Retrieval as a Tool":
+          - Overview: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.3 Retrieval as a Tool/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.3 Retrieval as a Tool/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.3 Retrieval as a Tool/examples-and-practice.md"
+        - "6.5.4 Summarization Compression and Forgetting":
+          - Overview: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.4 Summarization Compression and Forgetting/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.4 Summarization Compression and Forgetting/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.5 Memory and Agentic RAG/6.5.4 Summarization Compression and Forgetting/examples-and-practice.md"
+      - "6.6 Multi-Agent Systems":
+        - Overview: "stages/6. AI Agents/6.6 Multi-Agent Systems/index.md"
+        - "6.6.1 Supervisor Worker":
+          - Overview: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.1 Supervisor Worker/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.1 Supervisor Worker/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.1 Supervisor Worker/examples-and-practice.md"
+        - "6.6.2 Agents as Tools":
+          - Overview: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.2 Agents as Tools/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.2 Agents as Tools/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.2 Agents as Tools/examples-and-practice.md"
+        - "6.6.3 Handoffs and Shared State":
+          - Overview: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.3 Handoffs and Shared State/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.3 Handoffs and Shared State/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.6 Multi-Agent Systems/6.6.3 Handoffs and Shared State/examples-and-practice.md"
+      - "6.7 Agent Evaluation and Observability":
+        - Overview: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/index.md"
+        - "6.7.1 Task Evals":
+          - Overview: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.1 Task Evals/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.1 Task Evals/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.1 Task Evals/examples-and-practice.md"
+        - "6.7.2 Tool Unit and Integration Tests":
+          - Overview: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.2 Tool Unit and Integration Tests/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.2 Tool Unit and Integration Tests/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.2 Tool Unit and Integration Tests/examples-and-practice.md"
+        - "6.7.3 Structured Tracing":
+          - Overview: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.3 Structured Tracing/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.3 Structured Tracing/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.3 Structured Tracing/examples-and-practice.md"
+        - "6.7.4 Replay and Failure Triage":
+          - Overview: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.4 Replay and Failure Triage/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.4 Replay and Failure Triage/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.7 Agent Evaluation and Observability/6.7.4 Replay and Failure Triage/examples-and-practice.md"
+      - "6.8 Agent Security and Safety":
+        - Overview: "stages/6. AI Agents/6.8 Agent Security and Safety/index.md"
+        - "6.8.1 Prompt Injection Against Agents":
+          - Overview: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.1 Prompt Injection Against Agents/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.1 Prompt Injection Against Agents/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.1 Prompt Injection Against Agents/examples-and-practice.md"
+        - "6.8.2 Least Privilege Tool Access":
+          - Overview: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.2 Least Privilege Tool Access/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.2 Least Privilege Tool Access/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.2 Least Privilege Tool Access/examples-and-practice.md"
+        - "6.8.3 Secret Handling and Sandboxing":
+          - Overview: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.3 Secret Handling and Sandboxing/index.md"
+          - Deep Dive: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.3 Secret Handling and Sandboxing/deep-dive.md"
+          - Examples and Practice: "stages/6. AI Agents/6.8 Agent Security and Safety/6.8.3 Secret Handling and Sandboxing/examples-and-practice.md"
+    - "7. Model Infrastructure":
+      - Overview: "stages/7. Model Infrastructure/index.md"
+      - "7.1 Data Pipeline Architecture":
+        - Overview: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/index.md"
+        - "7.1.1 ETL and Scheduled Jobs":
+          - Overview: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.1 ETL and Scheduled Jobs/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.1 ETL and Scheduled Jobs/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.1 ETL and Scheduled Jobs/examples-and-practice.md"
+        - "7.1.2 Crawlers and Connectors":
+          - Overview: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.2 Crawlers and Connectors/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.2 Crawlers and Connectors/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.2 Crawlers and Connectors/examples-and-practice.md"
+        - "7.1.3 Cleaning and Validation":
+          - Overview: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.3 Cleaning and Validation/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.3 Cleaning and Validation/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.3 Cleaning and Validation/examples-and-practice.md"
+        - "7.1.4 Lineage and Versioning":
+          - Overview: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.4 Lineage and Versioning/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.4 Lineage and Versioning/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.1 Data Pipeline Architecture/7.1.4 Lineage and Versioning/examples-and-practice.md"
+      - "7.2 RAG and Feature Infrastructure":
+        - Overview: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/index.md"
+        - "7.2.1 Embedding Jobs":
+          - Overview: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.1 Embedding Jobs/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.1 Embedding Jobs/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.1 Embedding Jobs/examples-and-practice.md"
+        - "7.2.2 Vector Store Operations":
+          - Overview: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.2 Vector Store Operations/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.2 Vector Store Operations/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.2 Vector Store Operations/examples-and-practice.md"
+        - "7.2.3 Feature Stores and Artifacts":
+          - Overview: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.3 Feature Stores and Artifacts/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.3 Feature Stores and Artifacts/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.3 Feature Stores and Artifacts/examples-and-practice.md"
+        - "7.2.4 Index Refresh and Rollback":
+          - Overview: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.4 Index Refresh and Rollback/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.4 Index Refresh and Rollback/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.2 RAG and Feature Infrastructure/7.2.4 Index Refresh and Rollback/examples-and-practice.md"
+      - "7.3 Training and Adaptation Pipelines":
+        - Overview: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/index.md"
+        - "7.3.1 Pipeline Orchestration":
+          - Overview: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.1 Pipeline Orchestration/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.1 Pipeline Orchestration/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.1 Pipeline Orchestration/examples-and-practice.md"
+        - "7.3.2 Dataset Generation Jobs":
+          - Overview: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.2 Dataset Generation Jobs/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.2 Dataset Generation Jobs/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.2 Dataset Generation Jobs/examples-and-practice.md"
+        - "7.3.3 Fine Tuning Jobs":
+          - Overview: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.3 Fine Tuning Jobs/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.3 Fine Tuning Jobs/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.3 Fine Tuning Jobs/examples-and-practice.md"
+        - "7.3.4 Model Registry and Release Gates":
+          - Overview: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.4 Model Registry and Release Gates/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.4 Model Registry and Release Gates/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.3 Training and Adaptation Pipelines/7.3.4 Model Registry and Release Gates/examples-and-practice.md"
+      - "7.4 Serving and Deployment":
+        - Overview: "stages/7. Model Infrastructure/7.4 Serving and Deployment/index.md"
+        - "7.4.1 Inference APIs and Streaming":
+          - Overview: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.1 Inference APIs and Streaming/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.1 Inference APIs and Streaming/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.1 Inference APIs and Streaming/examples-and-practice.md"
+        - "7.4.2 Containers and Runtime Images":
+          - Overview: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.2 Containers and Runtime Images/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.2 Containers and Runtime Images/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.2 Containers and Runtime Images/examples-and-practice.md"
+        - "7.4.3 Cloud Deployment":
+          - Overview: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.3 Cloud Deployment/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.3 Cloud Deployment/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.3 Cloud Deployment/examples-and-practice.md"
+        - "7.4.4 Queues Batching and Autoscaling":
+          - Overview: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.4 Queues Batching and Autoscaling/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.4 Queues Batching and Autoscaling/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.4 Serving and Deployment/7.4.4 Queues Batching and Autoscaling/examples-and-practice.md"
+      - "7.5 Observability and Quality Operations":
+        - Overview: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/index.md"
+        - "7.5.1 Logs Metrics and Traces":
+          - Overview: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.1 Logs Metrics and Traces/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.1 Logs Metrics and Traces/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.1 Logs Metrics and Traces/examples-and-practice.md"
+        - "7.5.2 Evaluation in CI":
+          - Overview: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.2 Evaluation in CI/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.2 Evaluation in CI/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.2 Evaluation in CI/examples-and-practice.md"
+        - "7.5.3 Dashboards Alerts and Runbooks":
+          - Overview: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.3 Dashboards Alerts and Runbooks/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.3 Dashboards Alerts and Runbooks/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.5 Observability and Quality Operations/7.5.3 Dashboards Alerts and Runbooks/examples-and-practice.md"
+      - "7.6 Reliability and Cost Control":
+        - Overview: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/index.md"
+        - "7.6.1 Timeouts Retries and Circuit Breakers":
+          - Overview: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.1 Timeouts Retries and Circuit Breakers/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.1 Timeouts Retries and Circuit Breakers/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.1 Timeouts Retries and Circuit Breakers/examples-and-practice.md"
+        - "7.6.2 Caching Routing and Quotas":
+          - Overview: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.2 Caching Routing and Quotas/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.2 Caching Routing and Quotas/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.2 Caching Routing and Quotas/examples-and-practice.md"
+        - "7.6.3 Incident Response and Postmortems":
+          - Overview: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.3 Incident Response and Postmortems/index.md"
+          - Deep Dive: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.3 Incident Response and Postmortems/deep-dive.md"
+          - Examples and Practice: "stages/7. Model Infrastructure/7.6 Reliability and Cost Control/7.6.3 Incident Response and Postmortems/examples-and-practice.md"
+    - "8. Optimization and Hardware":
+      - Overview: "stages/8. Optimization and Hardware/index.md"
+      - "8.1 Inference Performance Model":
+        - Overview: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/index.md"
+        - "8.1.1 Latency Throughput and Cost Metrics":
+          - Overview: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.1 Latency Throughput and Cost Metrics/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.1 Latency Throughput and Cost Metrics/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.1 Latency Throughput and Cost Metrics/examples-and-practice.md"
+        - "8.1.2 Prefill Decode and KV Cache":
+          - Overview: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.2 Prefill Decode and KV Cache/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.2 Prefill Decode and KV Cache/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.2 Prefill Decode and KV Cache/examples-and-practice.md"
+        - "8.1.3 Batch Shape and Concurrency":
+          - Overview: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.3 Batch Shape and Concurrency/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.3 Batch Shape and Concurrency/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.3 Batch Shape and Concurrency/examples-and-practice.md"
+        - "8.1.4 Benchmark Design":
+          - Overview: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.4 Benchmark Design/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.4 Benchmark Design/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.1 Inference Performance Model/8.1.4 Benchmark Design/examples-and-practice.md"
+      - "8.2 Transformer Inference Internals":
+        - Overview: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/index.md"
+        - "8.2.1 Weight Memory and Activations":
+          - Overview: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.1 Weight Memory and Activations/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.1 Weight Memory and Activations/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.1 Weight Memory and Activations/examples-and-practice.md"
+        - "8.2.2 Attention and KV Cache Layout":
+          - Overview: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.2 Attention and KV Cache Layout/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.2 Attention and KV Cache Layout/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.2 Attention and KV Cache Layout/examples-and-practice.md"
+        - "8.2.3 GEMM GEMV and MLP Blocks":
+          - Overview: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.3 GEMM GEMV and MLP Blocks/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.3 GEMM GEMV and MLP Blocks/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.3 GEMM GEMV and MLP Blocks/examples-and-practice.md"
+        - "8.2.4 Sampling Hot Path":
+          - Overview: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.4 Sampling Hot Path/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.4 Sampling Hot Path/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.2 Transformer Inference Internals/8.2.4 Sampling Hot Path/examples-and-practice.md"
+      - "8.3 Model Optimization":
+        - Overview: "stages/8. Optimization and Hardware/8.3 Model Optimization/index.md"
+        - "8.3.1 Quantization Formats":
+          - Overview: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.1 Quantization Formats/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.1 Quantization Formats/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.1 Quantization Formats/examples-and-practice.md"
+        - "8.3.2 Calibration and Quality Checks":
+          - Overview: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.2 Calibration and Quality Checks/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.2 Calibration and Quality Checks/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.2 Calibration and Quality Checks/examples-and-practice.md"
+        - "8.3.3 Distillation and Pruning":
+          - Overview: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.3 Distillation and Pruning/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.3 Distillation and Pruning/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.3 Distillation and Pruning/examples-and-practice.md"
+        - "8.3.4 Speculative Decoding":
+          - Overview: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.4 Speculative Decoding/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.4 Speculative Decoding/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.3 Model Optimization/8.3.4 Speculative Decoding/examples-and-practice.md"
+      - "8.4 Serving Engines":
+        - Overview: "stages/8. Optimization and Hardware/8.4 Serving Engines/index.md"
+        - "8.4.1 vLLM SGLang TGI and TensorRT LLM":
+          - Overview: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.1 vLLM SGLang TGI and TensorRT LLM/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.1 vLLM SGLang TGI and TensorRT LLM/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.1 vLLM SGLang TGI and TensorRT LLM/examples-and-practice.md"
+        - "8.4.2 Continuous Batching":
+          - Overview: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.2 Continuous Batching/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.2 Continuous Batching/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.2 Continuous Batching/examples-and-practice.md"
+        - "8.4.3 Paged Attention":
+          - Overview: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.3 Paged Attention/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.3 Paged Attention/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.3 Paged Attention/examples-and-practice.md"
+        - "8.4.4 Streaming and Scheduler Policy":
+          - Overview: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.4 Streaming and Scheduler Policy/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.4 Streaming and Scheduler Policy/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.4 Serving Engines/8.4.4 Streaming and Scheduler Policy/examples-and-practice.md"
+      - "8.5 Distributed Inference":
+        - Overview: "stages/8. Optimization and Hardware/8.5 Distributed Inference/index.md"
+        - "8.5.1 Replica Parallelism":
+          - Overview: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.1 Replica Parallelism/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.1 Replica Parallelism/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.1 Replica Parallelism/examples-and-practice.md"
+        - "8.5.2 Tensor Parallelism":
+          - Overview: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.2 Tensor Parallelism/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.2 Tensor Parallelism/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.2 Tensor Parallelism/examples-and-practice.md"
+        - "8.5.3 Pipeline and Expert Parallelism":
+          - Overview: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.3 Pipeline and Expert Parallelism/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.3 Pipeline and Expert Parallelism/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.5 Distributed Inference/8.5.3 Pipeline and Expert Parallelism/examples-and-practice.md"
+      - "8.6 GPU and Kernel Basics":
+        - Overview: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/index.md"
+        - "8.6.1 CUDA Threads Blocks and Warps":
+          - Overview: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.1 CUDA Threads Blocks and Warps/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.1 CUDA Threads Blocks and Warps/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.1 CUDA Threads Blocks and Warps/examples-and-practice.md"
+        - "8.6.2 Memory Hierarchy":
+          - Overview: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.2 Memory Hierarchy/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.2 Memory Hierarchy/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.2 Memory Hierarchy/examples-and-practice.md"
+        - "8.6.3 Tensor Cores and Mixed Precision":
+          - Overview: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.3 Tensor Cores and Mixed Precision/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.3 Tensor Cores and Mixed Precision/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.3 Tensor Cores and Mixed Precision/examples-and-practice.md"
+        - "8.6.4 Triton and Custom Kernels":
+          - Overview: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.4 Triton and Custom Kernels/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.4 Triton and Custom Kernels/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.6 GPU and Kernel Basics/8.6.4 Triton and Custom Kernels/examples-and-practice.md"
+      - "8.7 Edge and Accelerator Co-Design":
+        - Overview: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/index.md"
+        - "8.7.1 Edge Runtime Targets":
+          - Overview: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.1 Edge Runtime Targets/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.1 Edge Runtime Targets/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.1 Edge Runtime Targets/examples-and-practice.md"
+        - "8.7.2 Power Thermal and Memory Budgets":
+          - Overview: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.2 Power Thermal and Memory Budgets/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.2 Power Thermal and Memory Budgets/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.2 Power Thermal and Memory Budgets/examples-and-practice.md"
+        - "8.7.3 ML Compilers and Graph Lowering":
+          - Overview: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.3 ML Compilers and Graph Lowering/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.3 ML Compilers and Graph Lowering/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.3 ML Compilers and Graph Lowering/examples-and-practice.md"
+        - "8.7.4 FPGA ASIC and Dataflow Thinking":
+          - Overview: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.4 FPGA ASIC and Dataflow Thinking/index.md"
+          - Deep Dive: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.4 FPGA ASIC and Dataflow Thinking/deep-dive.md"
+          - Examples and Practice: "stages/8. Optimization and Hardware/8.7 Edge and Accelerator Co-Design/8.7.4 FPGA ASIC and Dataflow Thinking/examples-and-practice.md"
+    - "9. Security, Blockchain, ZKML":
+      - Overview: "stages/9. Security, Blockchain, ZKML/index.md"
+      - "9.1 LLM and Agent Security":
+        - Overview: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/index.md"
+        - "9.1.1 Prompt Injection and Jailbreaks":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.1 Prompt Injection and Jailbreaks/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.1 Prompt Injection and Jailbreaks/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.1 Prompt Injection and Jailbreaks/examples-and-practice.md"
+        - "9.1.2 Tool Injection and Excessive Agency":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.2 Tool Injection and Excessive Agency/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.2 Tool Injection and Excessive Agency/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.2 Tool Injection and Excessive Agency/examples-and-practice.md"
+        - "9.1.3 Data Leakage and Prompt Logs":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.3 Data Leakage and Prompt Logs/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.3 Data Leakage and Prompt Logs/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.3 Data Leakage and Prompt Logs/examples-and-practice.md"
+        - "9.1.4 Insecure Output Handling":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.4 Insecure Output Handling/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.4 Insecure Output Handling/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.1 LLM and Agent Security/9.1.4 Insecure Output Handling/examples-and-practice.md"
+      - "9.2 Secure AI Application Architecture":
+        - Overview: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/index.md"
+        - "9.2.1 Authentication and Authorization":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.1 Authentication and Authorization/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.1 Authentication and Authorization/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.1 Authentication and Authorization/examples-and-practice.md"
+        - "9.2.2 Secrets and Service Accounts":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.2 Secrets and Service Accounts/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.2 Secrets and Service Accounts/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.2 Secrets and Service Accounts/examples-and-practice.md"
+        - "9.2.3 Dependency and Model Supply Chain":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.3 Dependency and Model Supply Chain/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.3 Dependency and Model Supply Chain/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.3 Dependency and Model Supply Chain/examples-and-practice.md"
+        - "9.2.4 Privacy PII and Data Retention":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.4 Privacy PII and Data Retention/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.4 Privacy PII and Data Retention/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.2 Secure AI Application Architecture/9.2.4 Privacy PII and Data Retention/examples-and-practice.md"
+      - "9.3 Governance and Responsible AI":
+        - Overview: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/index.md"
+        - "9.3.1 Risk Mapping":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.1 Risk Mapping/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.1 Risk Mapping/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.1 Risk Mapping/examples-and-practice.md"
+        - "9.3.2 Human Oversight":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.2 Human Oversight/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.2 Human Oversight/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.2 Human Oversight/examples-and-practice.md"
+        - "9.3.3 Fairness Bias and Toxicity":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.3 Fairness Bias and Toxicity/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.3 Fairness Bias and Toxicity/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.3 Fairness Bias and Toxicity/examples-and-practice.md"
+        - "9.3.4 Documentation and Auditability":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.4 Documentation and Auditability/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.4 Documentation and Auditability/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.3 Governance and Responsible AI/9.3.4 Documentation and Auditability/examples-and-practice.md"
+      - "9.4 Blockchain Fundamentals":
+        - Overview: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/index.md"
+        - "9.4.1 Wallets Keys and Signatures":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.1 Wallets Keys and Signatures/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.1 Wallets Keys and Signatures/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.1 Wallets Keys and Signatures/examples-and-practice.md"
+        - "9.4.2 Transactions Blocks and Gas":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.2 Transactions Blocks and Gas/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.2 Transactions Blocks and Gas/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.2 Transactions Blocks and Gas/examples-and-practice.md"
+        - "9.4.3 Smart Contract State":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.3 Smart Contract State/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.3 Smart Contract State/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.3 Smart Contract State/examples-and-practice.md"
+        - "9.4.4 Oracles and Off Chain Data":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.4 Oracles and Off Chain Data/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.4 Oracles and Off Chain Data/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.4 Blockchain Fundamentals/9.4.4 Oracles and Off Chain Data/examples-and-practice.md"
+      - "9.5 Smart Contract Security":
+        - Overview: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/index.md"
+        - "9.5.1 Reentrancy and External Calls":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.1 Reentrancy and External Calls/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.1 Reentrancy and External Calls/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.1 Reentrancy and External Calls/examples-and-practice.md"
+        - "9.5.2 Access Control Bugs":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.2 Access Control Bugs/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.2 Access Control Bugs/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.2 Access Control Bugs/examples-and-practice.md"
+        - "9.5.3 MEV Front Running and Oracle Risk":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.3 MEV Front Running and Oracle Risk/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.3 MEV Front Running and Oracle Risk/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.5 Smart Contract Security/9.5.3 MEV Front Running and Oracle Risk/examples-and-practice.md"
+      - "9.6 ZK and Verifiable AI":
+        - Overview: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/index.md"
+        - "9.6.1 Zero Knowledge Fundamentals":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.1 Zero Knowledge Fundamentals/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.1 Zero Knowledge Fundamentals/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.1 Zero Knowledge Fundamentals/examples-and-practice.md"
+        - "9.6.2 Circuits Witnesses and Provers":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.2 Circuits Witnesses and Provers/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.2 Circuits Witnesses and Provers/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.2 Circuits Witnesses and Provers/examples-and-practice.md"
+        - "9.6.3 zkVMs and Fixed Point ML":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.3 zkVMs and Fixed Point ML/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.3 zkVMs and Fixed Point ML/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.3 zkVMs and Fixed Point ML/examples-and-practice.md"
+        - "9.6.4 ZKML Use Cases and Limits":
+          - Overview: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.4 ZKML Use Cases and Limits/index.md"
+          - Deep Dive: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.4 ZKML Use Cases and Limits/deep-dive.md"
+          - Examples and Practice: "stages/9. Security, Blockchain, ZKML/9.6 ZK and Verifiable AI/9.6.4 ZKML Use Cases and Limits/examples-and-practice.md"
+    - "10. Mastery":
+      - Overview: "stages/10. Mastery/index.md"
+      - "10.1 Capstone Problem and Architecture":
+        - Overview: "stages/10. Mastery/10.1 Capstone Problem and Architecture/index.md"
+        - "10.1.1 Problem Selection":
+          - Overview: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.1 Problem Selection/index.md"
+          - Deep Dive: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.1 Problem Selection/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.1 Problem Selection/examples-and-practice.md"
+        - "10.1.2 Requirements and Constraints":
+          - Overview: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.2 Requirements and Constraints/index.md"
+          - Deep Dive: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.2 Requirements and Constraints/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.2 Requirements and Constraints/examples-and-practice.md"
+        - "10.1.3 Architecture Decision Records":
+          - Overview: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.3 Architecture Decision Records/index.md"
+          - Deep Dive: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.3 Architecture Decision Records/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.3 Architecture Decision Records/examples-and-practice.md"
+        - "10.1.4 Evaluation and Risk Plan":
+          - Overview: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.4 Evaluation and Risk Plan/index.md"
+          - Deep Dive: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.4 Evaluation and Risk Plan/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.1 Capstone Problem and Architecture/10.1.4 Evaluation and Risk Plan/examples-and-practice.md"
+      - "10.2 Capstone Build Execution":
+        - Overview: "stages/10. Mastery/10.2 Capstone Build Execution/index.md"
+        - "10.2.1 Vertical Slice Planning":
+          - Overview: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.1 Vertical Slice Planning/index.md"
+          - Deep Dive: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.1 Vertical Slice Planning/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.1 Vertical Slice Planning/examples-and-practice.md"
+        - "10.2.2 Integration Testing":
+          - Overview: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.2 Integration Testing/index.md"
+          - Deep Dive: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.2 Integration Testing/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.2 Integration Testing/examples-and-practice.md"
+        - "10.2.3 Deployment and Observability":
+          - Overview: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.3 Deployment and Observability/index.md"
+          - Deep Dive: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.3 Deployment and Observability/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.3 Deployment and Observability/examples-and-practice.md"
+        - "10.2.4 Failure Analysis":
+          - Overview: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.4 Failure Analysis/index.md"
+          - Deep Dive: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.4 Failure Analysis/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.2 Capstone Build Execution/10.2.4 Failure Analysis/examples-and-practice.md"
+      - "10.3 Portfolio Communication":
+        - Overview: "stages/10. Mastery/10.3 Portfolio Communication/index.md"
+        - "10.3.1 Technical Writing":
+          - Overview: "stages/10. Mastery/10.3 Portfolio Communication/10.3.1 Technical Writing/index.md"
+          - Deep Dive: "stages/10. Mastery/10.3 Portfolio Communication/10.3.1 Technical Writing/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.3 Portfolio Communication/10.3.1 Technical Writing/examples-and-practice.md"
+        - "10.3.2 Architecture Diagrams":
+          - Overview: "stages/10. Mastery/10.3 Portfolio Communication/10.3.2 Architecture Diagrams/index.md"
+          - Deep Dive: "stages/10. Mastery/10.3 Portfolio Communication/10.3.2 Architecture Diagrams/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.3 Portfolio Communication/10.3.2 Architecture Diagrams/examples-and-practice.md"
+        - "10.3.3 Demo and Result Narrative":
+          - Overview: "stages/10. Mastery/10.3 Portfolio Communication/10.3.3 Demo and Result Narrative/index.md"
+          - Deep Dive: "stages/10. Mastery/10.3 Portfolio Communication/10.3.3 Demo and Result Narrative/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.3 Portfolio Communication/10.3.3 Demo and Result Narrative/examples-and-practice.md"
+      - "10.4 Interview and Collaboration Readiness":
+        - Overview: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/index.md"
+        - "10.4.1 Debugging Stories":
+          - Overview: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.1 Debugging Stories/index.md"
+          - Deep Dive: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.1 Debugging Stories/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.1 Debugging Stories/examples-and-practice.md"
+        - "10.4.2 Design Review Practice":
+          - Overview: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.2 Design Review Practice/index.md"
+          - Deep Dive: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.2 Design Review Practice/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.2 Design Review Practice/examples-and-practice.md"
+        - "10.4.3 Code Walkthroughs":
+          - Overview: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.3 Code Walkthroughs/index.md"
+          - Deep Dive: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.3 Code Walkthroughs/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.4 Interview and Collaboration Readiness/10.4.3 Code Walkthroughs/examples-and-practice.md"
+      - "10.5 Specialization and Research Frontiers":
+        - Overview: "stages/10. Mastery/10.5 Specialization and Research Frontiers/index.md"
+        - "10.5.1 Choosing a Direction":
+          - Overview: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.1 Choosing a Direction/index.md"
+          - Deep Dive: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.1 Choosing a Direction/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.1 Choosing a Direction/examples-and-practice.md"
+        - "10.5.2 Reading Papers":
+          - Overview: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.2 Reading Papers/index.md"
+          - Deep Dive: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.2 Reading Papers/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.2 Reading Papers/examples-and-practice.md"
+        - "10.5.3 Reproducing Systems":
+          - Overview: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.3 Reproducing Systems/index.md"
+          - Deep Dive: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.3 Reproducing Systems/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.3 Reproducing Systems/examples-and-practice.md"
+        - "10.5.4 Advanced Project Roadmaps":
+          - Overview: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.4 Advanced Project Roadmaps/index.md"
+          - Deep Dive: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.4 Advanced Project Roadmaps/deep-dive.md"
+          - Examples and Practice: "stages/10. Mastery/10.5 Specialization and Research Frontiers/10.5.4 Advanced Project Roadmaps/examples-and-practice.md"
+  - Exam:
+    - Exam Dashboard: exam/index.md
   - Projects:
     - Project Ladder: projects/project-ladder.md
-  - Resources:
-    - Sources and Study Notes: resources/sources.md
-    - Authoring Standard: meta/roadmap-authoring-standard.md
-    - Old Roadmap Analysis: meta/old-roadmap-analysis.md
