@@ -520,6 +520,10 @@ nav:
           - Overview: "stages/4. LLMs/4.3 Generation Controls/4.3.4 Structured Outputs and JSON Schemas/index.md"
           - Deep Dive: "stages/4. LLMs/4.3 Generation Controls/4.3.4 Structured Outputs and JSON Schemas/deep-dive.md"
           - Examples and Practice: "stages/4. LLMs/4.3 Generation Controls/4.3.4 Structured Outputs and JSON Schemas/examples-and-practice.md"
+        - "4.3.5 Frequency and Presence Penalties":
+          - Overview: "stages/4. LLMs/4.3 Generation Controls/4.3.5 Frequency and Presence Penalties/index.md"
+          - Deep Dive: "stages/4. LLMs/4.3 Generation Controls/4.3.5 Frequency and Presence Penalties/deep-dive.md"
+          - Examples and Practice: "stages/4. LLMs/4.3 Generation Controls/4.3.5 Frequency and Presence Penalties/examples-and-practice.md"
       - "4.4 Model Landscape":
         - Overview: "stages/4. LLMs/4.4 Model Landscape/index.md"
         - "4.4.1 Closed API and Open Weight Models":

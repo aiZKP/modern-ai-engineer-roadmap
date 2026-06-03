@@ -102,7 +102,7 @@ STAGES = [
         "parts": [
             P("4.1", "Token and Context Mechanics", "Understand how language becomes tokens and why context is a scarce engineering resource.", "Create tokenization and context-budget demos.", "Report token counts, truncation risks, cost, and latency.", ["Tokenization and Subwords", "Context Windows and Truncation", "Prompt Packing and Context Efficiency", "Token Based Pricing"]),
             P("4.2", "Transformer Mental Model", "Learn the architecture concepts that explain modern LLM behavior.", "Annotate a transformer block and trace a simplified forward pass.", "Check tensor shapes, attention flow, and causal masking.", ["Embeddings and Positional Information", "Self Attention QKV", "MLP Blocks Residuals and Normalization", "Causal Masking"]),
-            P("4.3", "Generation Controls", "Control probabilistic text generation and make outputs fit software contracts.", "Compare repeated generations across decoding settings.", "Track variation, validity, latency, and quality.", ["Logits and Softmax", "Temperature Top-p and Top-k", "Stop Sequences and Max Tokens", "Structured Outputs and JSON Schemas"]),
+            P("4.3", "Generation Controls", "Control probabilistic text generation and make outputs fit software contracts.", "Compare repeated generations across decoding settings.", "Track variation, validity, latency, and quality.", ["Logits and Softmax", "Temperature Top-p and Top-k", "Stop Sequences and Max Tokens", "Structured Outputs and JSON Schemas", "Frequency and Presence Penalties"]),
             P("4.4", "Model Landscape", "Choose among model families, sizes, licenses, providers, and hosting patterns.", "Create a private model leaderboard for one task.", "Report quality, latency, cost per success, privacy, license, and operations.", ["Closed API and Open Weight Models", "Base Instruct Reasoning and Multimodal Models", "Licenses and Data Policies", "Build Buy Host or Route"]),
             P("4.5", "Prompting and In-Context Learning", "Use instructions, examples, constraints, and decomposition before heavier adaptation.", "Build a prompt testing lab.", "Track prompt version, pass rate, output validity, and regression cases.", ["Prompt Anatomy", "Zero Shot Few Shot and Examples", "Task Decomposition", "Prompt Versioning and Tests"]),
             P("4.6", "Fine-Tuning and Dataset Engineering", "Know when model weights should change and how data quality drives the result.", "Prepare an instruction dataset and PEFT plan.", "Track data quality, coverage, held-out quality, memory, cost, and regressions.", ["When to Fine Tune", "Instruction and Preference Data", "PEFT LoRA and QLoRA", "Fine Tuning Evaluation"]),
@@ -324,6 +324,14 @@ def measure_text(part: dict) -> str:
 
 
 def core_ideas(stage: dict, part: dict, sub: str) -> list[str]:
+    if sub == "Frequency and Presence Penalties":
+        return [
+            "Frequency penalty discourages tokens more strongly each time they repeat.",
+            "Presence penalty nudges the model away from tokens that have already appeared at least once.",
+            "Both penalties adjust logits before sampling, so they interact with temperature, top-p, and top-k.",
+            "Use penalties to reduce loops or repetitive phrasing, not to guarantee factuality or structure.",
+            "Measure repetition, validity, latency, and quality before deciding a penalty helped.",
+        ]
     return [
         f"Define {sub} in plain language before naming tools or frameworks.",
         f"Connect it to the stage artifact: {stage['artifact']}",
@@ -334,6 +342,14 @@ def core_ideas(stage: dict, part: dict, sub: str) -> list[str]:
 
 
 def mechanisms(stage: dict, part: dict, sub: str) -> list[str]:
+    if sub == "Frequency and Presence Penalties":
+        return [
+            "Input: candidate token logits plus the tokens already generated in the current response.",
+            "Transformation: subtract a penalty from logits for tokens that have already appeared.",
+            "Contract: reduce unwanted repetition while preserving required terms, schema validity, and task quality.",
+            f"Measurement: compare repeat rate, duplicate n-grams, validity, latency, and quality across settings.",
+            "Failure mode: excessive penalties can make output wander, avoid necessary terms, or break exact formats.",
+        ]
     stage_name = stage["name"]
     return [
         f"Input: identify what raw information, code, data, prompt, model output, trace, or user signal {sub} consumes.",
@@ -345,6 +361,14 @@ def mechanisms(stage: dict, part: dict, sub: str) -> list[str]:
 
 
 def worked_example(stage: dict, part: dict, sub: str) -> str:
+    if sub == "Frequency and Presence Penalties":
+        return (
+            "Use one prompt that tends to repeat itself, such as asking for ten naming ideas, taglines, or short troubleshooting tips. "
+            "Run it once with both penalties at zero, once with a modest frequency penalty, and once with a modest presence penalty. "
+            "Keep the prompt, model, temperature, top-p, max tokens, and schema settings the same. "
+            "Then compare duplicate phrases, required-term retention, output validity, latency, and human quality notes. "
+            "The useful decision is not which penalty sounds better in theory; it is which setting reduces repetition without damaging the task contract."
+        )
     artifact = stage["artifact"].rstrip(".")
     return (
         f"Imagine you are building the stage artifact: {artifact}. "
@@ -356,6 +380,14 @@ def worked_example(stage: dict, part: dict, sub: str) -> str:
 def domain_guidance(stage: dict, part: dict, sub: str) -> list[str]:
     text = f"{stage['name']} {part['name']} {sub}".lower()
     rules = [
+        (["frequency", "presence", "penalty", "penalties"], [
+            "Frequency penalty lowers the probability of a token in proportion to how often that token has already appeared in the generated text.",
+            "Presence penalty lowers the probability of a token once it has appeared at least once, which encourages the model to introduce new tokens or ideas.",
+            "Both penalties are logit adjustments before sampling; they do not replace prompting, retrieval, validation, or evaluation.",
+            "Use modest penalties when outputs loop, repeat wording, or need more variety in brainstorming and drafting tasks.",
+            "Keep penalties low for structured outputs, code, citations, product names, required terminology, and any task where repetition is correct.",
+            "Measure duplicate n-grams, repeated required fields, schema validity, and human quality notes before changing the setting permanently.",
+        ]),
         (["json schema", "tool contract", "function calling", "tool errors", "idempotency"], [
             "A tool contract should name the action precisely, describe when to use it, define required and optional arguments, and state exactly what the tool returns.",
             "Use narrow argument types, enums, ranges, and validation rules so the model has fewer ways to produce ambiguous calls.",
@@ -484,6 +516,61 @@ def mermaid_part(part: dict) -> str:
     return "\n".join(lines)
 
 
+def part_extra_sections(stage: dict, part: dict) -> str:
+    if stage["num"] != 4 or part["num"] != "4.3":
+        return ""
+    return dedent("""
+    ## Generation Control Flow
+
+    This diagram shows a beginner-friendly order for applying common generation controls during one next-token step. Stop sequences, max tokens, and structured-output checks sit around the sampling loop because they decide whether to continue, stop, validate, retry, or reject the result.
+
+    <div class="roadmap-diagram roadmap-diagram--part" markdown="1">
+
+    ```mermaid
+    %%{init: {"flowchart": {"htmlLabels": true, "nodeSpacing": 70, "rankSpacing": 90}, "themeVariables": {"fontSize": "18px"}} }%%
+    flowchart TD
+        A["Prompt + text generated so far<br/>+ optional JSON schema or format contract"] --> B["Model outputs raw logits<br/>z_i for every candidate token"]
+        B --> C["Count token history<br/>count_i and seen_i"]
+        C --> D["Frequency + presence penalties<br/>z_pen_i = z_i - frequency_penalty * count_i - presence_penalty * seen_i"]
+        D --> E["Temperature<br/>score_i = z_pen_i / temperature"]
+        E --> F["Softmax<br/>P_i = exp(score_i) / sum_j exp(score_j)"]
+        F --> G["Top-k filter<br/>keep the k highest probabilities"]
+        G --> H["Top-p filter<br/>keep the smallest sorted group whose total probability reaches p"]
+        H --> I["Structured-output constraint<br/>mask tokens that cannot continue valid JSON or schema<br/>(when constrained decoding is supported)"]
+        I --> J["Renormalize<br/>remaining probabilities add to 100%"]
+        J --> K["Sample one token"]
+        K --> L["Append token to output"]
+        L --> M{"Stop sequence matched?"}
+        M -- "yes" --> Z["Stop and return output<br/>usually without the stop sequence"]
+        M -- "no" --> N{"Max output tokens reached?"}
+        N -- "yes" --> Y["Stop with length limit<br/>output may be incomplete"]
+        N -- "no" --> O{"Structured output complete?"}
+        O -- "no" --> A
+        O -- "yes" --> P["Validate JSON/schema in code"]
+        P --> Q{"Valid?"}
+        Q -- "yes" --> Z
+        Q -- "no" --> R["Handle failure<br/>retry, repair, or reject"]
+    ```
+
+    </div>
+
+    Exact order can vary by provider or inference library. Some systems apply top-k before top-p, some expose only a few controls, and some add controls such as repetition penalty or min-p. Structured-output implementations also differ: some constrain token choices during decoding, while others validate or repair after the text is complete.
+
+    Beginner model:
+
+    1. The model creates raw logits.
+    2. Frequency and presence penalties adjust logits for tokens already used.
+    3. Temperature reshapes the logits.
+    4. Softmax turns logits into probabilities.
+    5. Top-k and top-p remove candidate tokens.
+    6. Structured-output constraints can mask tokens that would break valid JSON or the schema.
+    7. The remaining probabilities are rescaled.
+    8. The model samples one token.
+    9. Stop sequences, max tokens, and structured-output completion checks decide whether to stop or continue.
+    10. Completed structured outputs should still be validated by code.
+    """).strip() + "\n\n"
+
+
 def stage_index(stage: dict, idx: int) -> str:
     title = stage_title(stage)
     part_rows = []
@@ -583,7 +670,7 @@ def part_index(stage: dict, part: dict) -> str:
 
     </div>
 
-    ## Sub-Parts
+    {part_extra_sections(stage, part)}## Sub-Parts
 
     | Sub-part folder | What it explains |
     |---|---|
@@ -703,6 +790,45 @@ def deep_dive(stage: dict, part: dict, idx: int, sub: str) -> str:
 
 
 def examples_practice(stage: dict, part: dict, idx: int, sub: str) -> str:
+    if sub == "Frequency and Presence Penalties":
+        return dedent(f"""
+        # Examples and Practice: {sub}
+
+        ## Worked Practice
+
+        1. Write one paragraph explaining the difference between frequency penalty and presence penalty.
+        2. Draw a small diagram that shows token history, logit adjustment, sampling, and output.
+        3. Run or outline three generations for the same prompt: no penalties, modest frequency penalty, and modest presence penalty.
+        4. Measure it with: {part['measure']}
+        5. Add one failure case where a penalty makes the answer worse.
+
+        ## Mini Project Drill
+
+        Create a file named `notes/{slug(sub)}.md` in your project workspace. Include:
+
+        - the prompt you tested
+        - the generation settings that stayed fixed
+        - the frequency penalty and presence penalty values you compared
+        - one example output for each setting
+        - duplicate phrase or n-gram observations
+        - schema validity or format validity, if relevant
+        - one decision you would make from the result
+
+        ## Check Your Understanding
+
+        | Question | What a strong answer includes |
+        |---|---|
+        | What does frequency penalty do? | It penalizes repeated tokens more as they appear more often, which can reduce loops and repeated wording. |
+        | What does presence penalty do? | It penalizes tokens after they have appeared once, which can push the model toward new tokens or ideas. |
+        | When can penalties hurt? | They can avoid required terms, damage exact formats, weaken code, or make structured output less valid. |
+        | How would you test them? | Keep the prompt and other decoding settings fixed, compare repeated runs, and measure repetition, validity, latency, and quality. |
+
+        ## Stretch Exercise
+
+        Repeat the drill on a structured-output prompt. Record whether penalties improve variety or damage contract validity.
+
+        Return to {link(sub_code(part, idx) + ' ' + sub, 'index.md')}.
+        """)
     return dedent(f"""
     # Examples and Practice: {sub}
 

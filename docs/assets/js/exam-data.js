@@ -10671,9 +10671,9 @@ window.ROADMAP_EXAM_DATA = {
       "level": 5,
       "levelLabel": "Measurement",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "Which measurement should decide whether Logits and Softmax is working?",
-      "explanation": "Connect Logits and Softmax to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "answer": "Connect Logits and Softmax to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
+      "question": "Which measurement should decide whether Frequency and Presence Penalties is working?",
+      "explanation": "Connect Frequency and Presence Penalties to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
+      "answer": "Connect Frequency and Presence Penalties to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
     },
     {
       "id": "4-3-generation-controls-answer-l6",
@@ -10683,9 +10683,9 @@ window.ROADMAP_EXAM_DATA = {
       "level": 6,
       "levelLabel": "Failure Mode",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "Name one failure mode of Temperature Top-p and Top-k and the first signal that would expose it.",
-      "explanation": "Connect Temperature Top-p and Top-k to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "answer": "Connect Temperature Top-p and Top-k to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
+      "question": "Name one failure mode of Logits and Softmax and the first signal that would expose it.",
+      "explanation": "Connect Logits and Softmax to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
+      "answer": "Connect Logits and Softmax to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
     },
     {
       "id": "4-3-generation-controls-answer-l7",
@@ -10695,9 +10695,9 @@ window.ROADMAP_EXAM_DATA = {
       "level": 7,
       "levelLabel": "Debugging",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "A result involving Stop Sequences and Max Tokens is wrong. What do you inspect first, second, and third?",
-      "explanation": "Connect Stop Sequences and Max Tokens to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "answer": "Connect Stop Sequences and Max Tokens to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
+      "question": "A result involving Temperature Top-p and Top-k is wrong. What do you inspect first, second, and third?",
+      "explanation": "Connect Temperature Top-p and Top-k to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
+      "answer": "Connect Temperature Top-p and Top-k to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
     },
     {
       "id": "4-3-generation-controls-answer-l8",
@@ -10707,9 +10707,9 @@ window.ROADMAP_EXAM_DATA = {
       "level": 8,
       "levelLabel": "Tradeoff",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "What tradeoff does Structured Outputs and JSON Schemas create between quality, cost, latency, risk, or maintainability?",
-      "explanation": "Connect Structured Outputs and JSON Schemas to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "answer": "Connect Structured Outputs and JSON Schemas to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
+      "question": "What tradeoff does Stop Sequences and Max Tokens create between quality, cost, latency, risk, or maintainability?",
+      "explanation": "Connect Stop Sequences and Max Tokens to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
+      "answer": "Connect Stop Sequences and Max Tokens to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
     },
     {
       "id": "4-3-generation-controls-answer-l9",
@@ -10719,9 +10719,9 @@ window.ROADMAP_EXAM_DATA = {
       "level": 9,
       "levelLabel": "Production",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "How would Logits and Softmax change when moving from a demo to production?",
-      "explanation": "Connect Logits and Softmax to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "answer": "Connect Logits and Softmax to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
+      "question": "How would Structured Outputs and JSON Schemas change when moving from a demo to production?",
+      "explanation": "Connect Structured Outputs and JSON Schemas to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
+      "answer": "Connect Structured Outputs and JSON Schemas to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
     },
     {
       "id": "4-3-generation-controls-answer-l10",
@@ -10731,9 +10731,9 @@ window.ROADMAP_EXAM_DATA = {
       "level": 10,
       "levelLabel": "Mastery",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "Teach Temperature Top-p and Top-k as a decision rule a senior AI engineer would use.",
-      "explanation": "Connect Temperature Top-p and Top-k to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "answer": "Connect Temperature Top-p and Top-k to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
+      "question": "Teach Frequency and Presence Penalties as a decision rule a senior AI engineer would use.",
+      "explanation": "Connect Frequency and Presence Penalties to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
+      "answer": "Connect Frequency and Presence Penalties to An LLM fundamentals notebook comparing models, tokenization, structured outputs, embeddings, costs, and failure cases. Use the part measurement (variation, validity, latency, and quality) as evidence, mention the artifact (Compare repeated generations across decoding settings.), and name a concrete failure mode. Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it."
     },
     {
       "id": "4-3-generation-controls-blank-l1",
@@ -10803,7 +10803,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 6,
       "levelLabel": "Failure Mode",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "When Temperature Top-p and Top-k breaks, the failure should be recorded in the learning ____.",
+      "question": "When Logits and Softmax breaks, the failure should be recorded in the learning ____.",
       "explanation": "log",
       "answer": "log"
     },
@@ -10851,7 +10851,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 10,
       "levelLabel": "Mastery",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "Mastery means connecting Temperature Top-p and Top-k to artifact, evaluation, failure, and next ____.",
+      "question": "Mastery means connecting Frequency and Presence Penalties to artifact, evaluation, failure, and next ____.",
       "explanation": "decision",
       "answer": "decision"
     },
@@ -10935,7 +10935,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 5,
       "levelLabel": "Measurement",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "The metric for Logits and Softmax improves while the user-visible answer gets worse. What should you inspect?",
+      "question": "The metric for Frequency and Presence Penalties improves while the user-visible answer gets worse. What should you inspect?",
       "explanation": "Inspect examples, slices, and the metric definition before optimizing further.",
       "choices": [
         "Inspect examples, slices, and the metric definition before optimizing further.",
@@ -10953,7 +10953,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 6,
       "levelLabel": "Failure Mode",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "A failure involving Temperature Top-p and Top-k appears after release. What is the safest response?",
+      "question": "A failure involving Logits and Softmax appears after release. What is the safest response?",
       "explanation": "Reproduce the failure, compare against the guard, and record the regression before changing the system.",
       "choices": [
         "Switch to a larger model immediately and skip the current measurement.",
@@ -10971,7 +10971,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 7,
       "levelLabel": "Debugging",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "A teammate wants to switch models or frameworks to fix Stop Sequences and Max Tokens. What should you ask for first?",
+      "question": "A teammate wants to switch models or frameworks to fix Temperature Top-p and Top-k. What should you ask for first?",
       "explanation": "Ask for the failure trace and baseline measurement that justify the change.",
       "choices": [
         "Keep the demo result because it worked once on the easiest example.",
@@ -10989,7 +10989,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 8,
       "levelLabel": "Tradeoff",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "Two solutions for Structured Outputs and JSON Schemas both work. One is slower and safer; one is faster and riskier. What decides?",
+      "question": "Two solutions for Stop Sequences and Max Tokens both work. One is slower and safer; one is faster and riskier. What decides?",
       "explanation": "Choose using the documented tradeoff: user value, risk, latency, cost, and reversibility.",
       "choices": [
         "Delete the failing case so the reported metric looks cleaner.",
@@ -11007,7 +11007,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 9,
       "levelLabel": "Production",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "The demo for Logits and Softmax is ready for users. What production evidence is still needed?",
+      "question": "The demo for Structured Outputs and JSON Schemas is ready for users. What production evidence is still needed?",
       "explanation": "Add monitoring, rollback criteria, regression checks, and ownership for failures.",
       "choices": [
         "Add monitoring, rollback criteria, regression checks, and ownership for failures.",
@@ -11025,7 +11025,7 @@ window.ROADMAP_EXAM_DATA = {
       "level": 10,
       "levelLabel": "Mastery",
       "source": "Use the Hands-On LLMs spine: tokens and embeddings, transformer behavior, generation controls, semantic search, and fine-tuning only when the data and evaluation support it.",
-      "question": "You are mentoring someone on Temperature Top-p and Top-k. What final proof shows mastery?",
+      "question": "You are mentoring someone on Frequency and Presence Penalties. What final proof shows mastery?",
       "explanation": "They can explain the decision rule, show the artifact, evaluate it, and debug a realistic failure.",
       "choices": [
         "Switch to a larger model immediately and skip the current measurement.",
